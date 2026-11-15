@@ -32,7 +32,7 @@ extension.js
  │       └─ playerSidebar.js ← player icons on the left (several players)
  ├─ lib/ui/panelLyrics.js    ← current lyric line for the top bar, even with the card closed
  ├─ lib/ui/wave.js           ← animation driver + Encore's ribbon (two twisting strands)
- ├─ lib/ui/visualizer.js     ← top bar visualizer: wave, bars, signal
+ ├─ lib/ui/visualizer.js     ← top bar visualizer: wave, bars, orbit
  ├─ lib/art/artCache.js      ← http artwork → ~/.cache, and color extraction
  ├─ lib/lyrics/lrclib.js     ← lyrics: player, local files, lrclib.net, lyrics.ovh
  │   ├─ local.js             ← "<track>.lrc" beside local files, and tags inside them
@@ -88,7 +88,8 @@ is destroyed.
 ## The ribbon
 
 Encore's wave is a "ribbon": two thin strands in counter-phase that cross at regular points and look
-twisted, scaled by a slow swell that travels along them. When playback stops it settles into one
+twisted, scaled by a swell that travels along them and a slow "breath" over time, so it keeps
+changing shape. Both stay above 60 % so the motion is always clear. When playback stops it settles into one
 straight line. `lib/ui/wave.js` has two parts:
 
 - **`WaveAnimator`** moves it. On every frame of a `Clutter.Timeline` it advances the phase and eases
@@ -110,10 +111,15 @@ touching the code.
 ## The top bar visualizer
 
 `PanelVisualizer` (`lib/ui/visualizer.js`) is always shown and draws one of three styles with cairo:
-the wave, bars (rounded and mirrored around the middle, each driven by two slow sines of its own so
-they move smoothly, taller in the center) or signal (a main line with two fainter echoes that drift
-and breathe). They are animations, not
-an analysis of the sound: GNOME Shell cannot read the audio without spawning a capture process.
+the wave, bars (rounded and mirrored around the middle, each driven by sines of its own plus random
+beats) or orbit (two dots with fading trails tracing Lissajous figures). They are animations, not an
+analysis of the sound: GNOME Shell cannot read the audio without spawning a capture process.
+
+None of them loops the same way. `Drift` (in `wave.js`) is a value that picks a new random target
+every few seconds and glides there with smoothstep, so nothing ever jumps. The ribbon's speed, height
+and twist length drift (in `WaveAnimator`, so the seek bar varies too); the bars' peak position and
+loudness drift and a random "kick" decays every 0.35–1 s; the orbit's speed and size drift, and every
+5–10 s it morphs over 1.6 s into another figure (ellipse, figure eight, pretzel, knots).
 
 It moves while *any* player plays: `MprisManager` emits `playback-changed` whenever the set of playing
 players, or what they play, changes, and `indicator.js` asks `manager.playing`. With album art colors

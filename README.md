@@ -15,16 +15,17 @@ mpv-mpris), Spotify, and web browsers playing audio or video, among others.
   the card, and settles when everything is paused. Three styles:
   - **Wave**: Encore's ribbon, two thin strands that twist around each other
   - **Bars**: rounded bars that rise and fall smoothly
-  - **Signal**: a layered line that breathes
+  - **Orbit**: two dots with trails, tracing figures that morph into each other
 
-  It is white, or, with album art colors on, a blend of up to three colors of the artwork that is
-  playing. The visualizers are animations, not an analysis of the actual sound.
+  None of them repeats the same loop: speed, height, the bars' beats and the orbit's figure change
+  at random, with smooth transitions. It is white, or, with album art colors on, a blend of up to
+  three colors of the artwork that is playing. The visualizers are animations, not an analysis of the actual sound.
 - **Optional extras**, all off by default:
   - album art or the player's icon
   - the title and artist, which scroll when they do not fit
   - previous/play/next buttons
-- **Lyrics in the top bar**, also optional: the current line of the lyrics takes the place of the
-  text and follows the song even while the card is closed.
+- **Lyrics in the top bar**: choose *Lyrics* as the top bar text to show the current line of the
+  lyrics; it follows the song even while the card is closed.
 - **Mouse**: click to open the card, middle-click to play or pause, and scroll to change the volume or
   the track (configurable).
 - **Placement**: left, center or right section, at any position among the visible items.
@@ -119,7 +120,7 @@ gnome-extensions prefs encore-now-playing@juanfer-rg.github.io
 
 | Page | What you can change |
 | --- | --- |
-| **Top Bar** | Section and position, hide when nothing plays, visualizer style, icon, text or lyrics, playback buttons, text width and scrolling, scroll-wheel action |
+| **Top Bar** | Section and position, hide when nothing plays, visualizer style, icon, text (title, artist or lyrics), playback buttons, text width and scrolling, scroll-wheel action |
 | **Card** | Compact or large style, width of the compact card, volume, shuffle/repeat and lyrics buttons, colors from album art, accent color |
 | **Players** | Turn off players you want ignored |
 | **Behavior** | Pause other players, click the artwork to show the player, hide GNOME's media player, online lyrics, album art cache size |

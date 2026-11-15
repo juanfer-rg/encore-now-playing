@@ -17,6 +17,7 @@
     <value nick="title" value="1"/>
     <value nick="title-artist" value="2"/>
     <value nick="artist-title" value="3"/>
+    <value nick="lyrics" value="4"/>
   </enum>
 
   <enum id="org.gnome.shell.extensions.encore-now-playing.ScrollAction">
@@ -28,7 +29,7 @@
   <enum id="org.gnome.shell.extensions.encore-now-playing.Visualizer">
     <value nick="wave" value="0"/>
     <value nick="bars" value="1"/>
-    <value nick="signal" value="2"/>
+    <value nick="orbit" value="2"/>
   </enum>
 
   <enum id="org.gnome.shell.extensions.encore-now-playing.CardLayout">
@@ -52,7 +53,7 @@
     <key name="panel-visualizer" enum="org.gnome.shell.extensions.encore-now-playing.Visualizer">
       <default>'wave'</default>
       <summary>Style of the top bar visualizer</summary>
-      <description>wave: flowing line; bars: rounded bars that rise and fall; signal: a layered, breathing line. The visualizer is always shown and moves while something is playing.</description>
+      <description>wave: flowing line; bars: rounded bars that rise and fall; orbit: two dots tracing figures that morph into each other. The visualizer is always shown and moves while something is playing.</description>
     </key>
     <key name="panel-icon" enum="org.gnome.shell.extensions.encore-now-playing.PanelIcon">
       <default>'none'</default>
@@ -61,11 +62,6 @@
     <key name="panel-text" enum="org.gnome.shell.extensions.encore-now-playing.PanelText">
       <default>'none'</default>
       <summary>Text shown in the top bar</summary>
-    </key>
-    <key name="panel-lyrics" type="b">
-      <default>false</default>
-      <summary>Show the current lyric line in the top bar</summary>
-      <description>Replaces the top bar text while on. Uses the same lyrics sources as the card.</description>
     </key>
     <key name="show-panel-controls" type="b">
       <default>false</default>

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: encore-now-playing 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-15 09:20-0500\n"
+"POT-Creation-Date: 2026-11-15 09:41-0500\n"
 "PO-Revision-Date: 2026-11-15 06:19-0500\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: Spanish\n"
@@ -58,7 +58,8 @@ msgstr ""
 "de partes internas de GNOME y puede dejar de funcionar tras una "
 "actualización."
 
-#: lib/prefs/behaviorPage.js:59 lib/ui/mediaCard.js:203
+#: lib/prefs/behaviorPage.js:59 lib/prefs/panelPage.js:36
+#: lib/ui/mediaCard.js:203
 msgid "Lyrics"
 msgstr "Letras"
 
@@ -240,8 +241,8 @@ msgid "Bars"
 msgstr "Barras"
 
 #: lib/prefs/panelPage.js:24
-msgid "Signal"
-msgstr "Señal"
+msgid "Orbit"
+msgstr "Órbita"
 
 #: lib/prefs/panelPage.js:25
 msgid ""
@@ -255,7 +256,7 @@ msgstr ""
 msgid "Icon"
 msgstr "Icono"
 
-#: lib/prefs/panelPage.js:27 lib/prefs/panelPage.js:34
+#: lib/prefs/panelPage.js:27 lib/prefs/panelPage.js:32
 msgid "None"
 msgstr "Ninguno"
 
@@ -267,80 +268,76 @@ msgstr "Icono del reproductor"
 msgid "Album art"
 msgstr "Carátula"
 
-#: lib/prefs/panelPage.js:31
-msgid "Show lyrics"
-msgstr "Mostrar letra"
-
-#: lib/prefs/panelPage.js:32
-msgid "The current line of the lyrics, instead of the text"
-msgstr "La línea actual de la letra, en lugar del texto"
-
-#: lib/prefs/panelPage.js:33 lib/prefs/panelPage.js:46
+#: lib/prefs/panelPage.js:31 lib/prefs/panelPage.js:42
 msgid "Text"
 msgstr "Texto"
 
-#: lib/prefs/panelPage.js:35
+#: lib/prefs/panelPage.js:33
 msgid "Title"
 msgstr "Título"
 
-#: lib/prefs/panelPage.js:36
+#: lib/prefs/panelPage.js:34
 msgid "Title · Artist"
 msgstr "Título · Artista"
 
-#: lib/prefs/panelPage.js:37
+#: lib/prefs/panelPage.js:35
 msgid "Artist – Title"
 msgstr "Artista – Título"
 
-#: lib/prefs/panelPage.js:42
+#: lib/prefs/panelPage.js:37
+msgid "Lyrics shows the current line and follows the song"
+msgstr "Letra muestra la línea actual y sigue la canción"
+
+#: lib/prefs/panelPage.js:38
 msgid "Playback buttons"
 msgstr "Botones de reproducción"
 
-#: lib/prefs/panelPage.js:43
+#: lib/prefs/panelPage.js:39
 msgid "Previous, play/pause and next next to the text"
 msgstr "Anterior, reproducir/pausar y siguiente junto al texto"
 
-#: lib/prefs/panelPage.js:47
+#: lib/prefs/panelPage.js:43
 msgid "Maximum width"
 msgstr "Ancho máximo"
 
-#: lib/prefs/panelPage.js:48
+#: lib/prefs/panelPage.js:44
 msgid "In pixels"
 msgstr "En píxeles"
 
-#: lib/prefs/panelPage.js:50
+#: lib/prefs/panelPage.js:46
 msgid "Scroll long text"
 msgstr "Desplazar el texto largo"
 
-#: lib/prefs/panelPage.js:51
+#: lib/prefs/panelPage.js:47
 msgid "Scrolling speed"
 msgstr "Velocidad de desplazamiento"
 
-#: lib/prefs/panelPage.js:52
+#: lib/prefs/panelPage.js:48
 msgid "Pixels per second"
 msgstr "Píxeles por segundo"
 
-#: lib/prefs/panelPage.js:58
+#: lib/prefs/panelPage.js:54
 msgid "Mouse"
 msgstr "Ratón"
 
-#: lib/prefs/panelPage.js:58
+#: lib/prefs/panelPage.js:54
 msgid "Middle-click the indicator to play or pause."
 msgstr ""
 "Haz clic con el botón central en el indicador para reproducir o pausar."
 
-#: lib/prefs/panelPage.js:59
+#: lib/prefs/panelPage.js:55
 msgid "Scroll wheel"
 msgstr "Rueda del ratón"
 
-#: lib/prefs/panelPage.js:60
+#: lib/prefs/panelPage.js:56
 msgid "Nothing"
 msgstr "Nada"
 
-#: lib/prefs/panelPage.js:61
+#: lib/prefs/panelPage.js:57
 msgid "Change volume"
 msgstr "Cambiar el volumen"
 
-#: lib/prefs/panelPage.js:62
+#: lib/prefs/panelPage.js:58
 msgid "Change track"
 msgstr "Cambiar de pista"
 
@@ -444,100 +441,89 @@ msgstr ""
 msgid "No lyrics found"
 msgstr "No se encontraron letras"
 
-#: lib/ui/progressBar.js:182
+#: lib/ui/progressBar.js:184
 msgid "Track position"
 msgstr "Posición de la pista"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:45
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:46
 msgid "Top bar section"
 msgstr "Sección de la barra superior"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:50
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:51
 msgid "Position inside the top bar section"
 msgstr "Posición dentro de la sección de la barra superior"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:54
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:55
 msgid "Style of the top bar visualizer"
 msgstr "Estilo del visualizador de la barra superior"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:55
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:56
 msgid ""
-"wave: flowing line; bars: rounded bars that rise and fall; signal: a "
-"layered, breathing line. The visualizer is always shown and moves while "
-"something is playing."
+"wave: flowing line; bars: rounded bars that rise and fall; orbit: two dots "
+"tracing figures that morph into each other. The visualizer is always shown "
+"and moves while something is playing."
 msgstr ""
-"wave: línea que fluye; bars: barras redondeadas que suben y bajan; signal: "
-"una línea en capas que respira. El visualizador siempre se muestra y se "
-"mueve mientras algo suena."
+"wave: línea que fluye; bars: barras redondeadas que suben y bajan; orbit: "
+"dos puntos que trazan figuras que se transforman entre sí. El visualizador "
+"siempre se muestra y se mueve mientras algo suena."
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:59
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:60
 msgid "Icon shown in the top bar"
 msgstr "Icono que se muestra en la barra superior"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:63
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:64
 msgid "Text shown in the top bar"
 msgstr "Texto que se muestra en la barra superior"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:67
-msgid "Show the current lyric line in the top bar"
-msgstr "Mostrar la línea actual de la letra en la barra superior"
-
 #: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:68
-msgid ""
-"Replaces the top bar text while on. Uses the same lyrics sources as the card."
-msgstr ""
-"Reemplaza el texto de la barra superior mientras está activo. Usa las mismas "
-"fuentes de letras que la tarjeta."
-
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:72
 msgid "Show previous/play/next buttons in the top bar"
 msgstr "Mostrar los botones anterior/reproducir/siguiente en la barra superior"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:77
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:73
 msgid "Maximum width of the top bar text, in pixels"
 msgstr "Ancho máximo del texto de la barra superior, en píxeles"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:81
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:77
 msgid "Scroll text that does not fit"
 msgstr "Desplazar el texto que no cabe"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:86
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:82
 msgid "Scrolling speed, in pixels per second"
 msgstr "Velocidad de desplazamiento, en píxeles por segundo"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:90
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:86
 msgid "Hide the indicator when no player is running"
 msgstr "Ocultar el indicador cuando no hay reproductores abiertos"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:94
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:90
 msgid "What scrolling over the indicator does"
 msgstr "Qué hace la rueda del ratón sobre el indicador"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:100
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:96
 msgid "Card layout"
 msgstr "Diseño de la tarjeta"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:101
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:97
 msgid "compact: artwork on the left; large: big artwork on top."
 msgstr "compact: carátula a la izquierda; large: carátula grande arriba."
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:106
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:102
 msgid "Width of the player card, in pixels"
 msgstr "Ancho de la tarjeta del reproductor, en píxeles"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:110
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:106
 msgid "Show the volume slider"
 msgstr "Mostrar el control de volumen"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:114
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:110
 msgid "Show the shuffle and repeat buttons"
 msgstr "Mostrar los botones de aleatorio y repetir"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:118
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:114
 msgid "Show the lyrics button"
 msgstr "Mostrar el botón de letras"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:122
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:118
 msgid ""
 "Color the waves and volume from the album art and add an ambient glow behind "
 "it"
@@ -545,15 +531,15 @@ msgstr ""
 "Colorear las ondas y el volumen con la carátula y añadir un brillo ambiente "
 "detrás"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:126
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:122
 msgid "Accent color used when dynamic colors are off"
 msgstr "Color de acento cuando los colores dinámicos están desactivados"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:132
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:128
 msgid "Players to ignore"
 msgstr "Reproductores que se ignoran"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:133
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:129
 msgid ""
 "Player keys (the MPRIS bus name without the org.mpris.MediaPlayer2. prefix "
 "and instance suffix)."
@@ -561,16 +547,16 @@ msgstr ""
 "Claves de reproductor (el nombre de bus MPRIS sin el prefijo "
 "org.mpris.MediaPlayer2. ni el sufijo de instancia)."
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:137
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:133
 msgid "Hide GNOME's built-in media player in the notification list"
 msgstr ""
 "Ocultar el reproductor integrado de GNOME en la lista de notificaciones"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:141
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:137
 msgid "Look up lyrics online (lrclib.net, lyrics.ovh)"
 msgstr "Buscar letras en internet (lrclib.net, lyrics.ovh)"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:142
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:138
 msgid ""
 "When enabled, the artist, title, album and duration of the current track are "
 "sent to lrclib.net and lyrics.ovh."
@@ -578,14 +564,14 @@ msgstr ""
 "Si se activa, el artista, el título, el álbum y la duración de la pista "
 "actual se envían a lrclib.net y lyrics.ovh."
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:146
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:142
 msgid "Clicking the album art brings the player window to the front"
 msgstr "Hacer clic en la carátula trae al frente la ventana del reproductor"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:150
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:146
 msgid "Pause other players when one starts playing"
 msgstr "Pausar otros reproductores cuando uno empieza a sonar"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:155
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:151
 msgid "Maximum size of the album art cache, in MB"
 msgstr "Tamaño máximo de la caché de carátulas, en MB"
