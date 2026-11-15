@@ -6,20 +6,21 @@ A music player card for GNOME Shell 48–50. It works with any player that suppo
 
 ## Features
 
-- **Top bar indicator**: album art or player icon, plus the title and artist. Text that does not fit
-  scrolls. Previous/play/next buttons are optional.
-- **Player card**:
-  - artwork
-  - title, artist and album
-  - seek bar with elapsed and total time
-  - transport controls, shuffle and repeat
-  - per-player volume
+- **Top bar indicator**: by default, just an audio wave in the style of Android's media controls. It
+  flows while music plays, flattens when paused and takes its color from the artwork. Album art or
+  the player icon, the title and artist (scrolling when it does not fit) and previous/play/next
+  buttons can be turned on in the preferences.
+- **Compact player card**: artwork on the left (with the player's icon as a badge); title, artist
+  and album, transport controls with shuffle and repeat, a wavy seek bar with elapsed and remaining
+  time, and per-player volume on the right.
 - **Colors from the artwork**: the popup is tinted with the album art's dominant colors, or a manual
   accent color if you prefer.
-- **Several players**: the most recent one is chosen automatically, and a switcher lets you pick another.
+- **Several players**: the most recent one is chosen automatically. A bar on the left of the card shows
+  each running player's icon (with a dot under the ones playing); click one to show it in the card.
   Optionally, other players pause when one starts.
 - **Synced lyrics**: taken from the player (`xesam:asText`) when it provides them. You can also turn on
-  lookup on [lrclib.net](https://lrclib.net); it is off by default. Click a line to jump to it.
+  lookup on [lrclib.net](https://lrclib.net); it is off by default. They unfold below the card; click a
+  line to jump to it.
 - **Extras**:
   - blocklist for players you never want to see
   - option to hide GNOME's built-in media player
@@ -40,6 +41,8 @@ make enable
 ```
 
 ## Development
+
+[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) explains how the code is organized.
 
 | Command | What it does |
 | --- | --- |

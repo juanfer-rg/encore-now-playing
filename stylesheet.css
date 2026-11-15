@@ -11,6 +11,15 @@
   background-size: cover;
 }
 
+/* Audio wave (lib/ui/wave.js reads the -encore-wave-* lengths) */
+.encore-wave {
+  width: 34px;
+  height: 16px;
+  -encore-wave-thickness: 2px;
+  -encore-wave-wavelength: 11px;
+  -encore-wave-amplitude: 3.5px;
+}
+
 .encore-panel-controls {
   spacing: 0;
 }
@@ -36,6 +45,10 @@
 
 .encore-card {
   padding: 10px;
+  spacing: 10px;
+}
+
+.encore-card-content {
   spacing: 12px;
 }
 
@@ -43,28 +56,25 @@
   color: #f6f5f4;
 }
 
-/* Player switcher */
-.encore-switcher-box {
-  spacing: 6px;
+/* Compact layout: artwork left, controls right */
+.encore-card-top {
+  /* keep in sync with SIDE_GAP in lib/ui/mediaCard.js */
+  spacing: 16px;
 }
 
-.encore-chip {
-  padding: 4px 10px;
-  border-radius: 99px;
-  background-color: rgba(127, 127, 127, 0.15);
+.encore-card-side {
+  spacing: 4px;
 }
 
-.encore-chip:hover {
-  background-color: rgba(127, 127, 127, 0.25);
+.encore-card-header {
+  spacing: 8px;
 }
 
-.encore-chip:checked {
-  background-color: rgba(127, 127, 127, 0.45);
-  font-weight: bold;
-}
-
-.encore-chip-content {
-  spacing: 6px;
+.encore-card-wave {
+  width: 22px;
+  height: 14px;
+  -encore-wave-wavelength: 8px;
+  -encore-wave-amplitude: 3px;
 }
 
 /* Artwork */
@@ -84,30 +94,29 @@
 }
 
 .encore-art-placeholder {
-  icon-size: 96px;
+  icon-size: 56px;
   color: rgba(127, 127, 127, 0.6);
 }
 
-/* Track info */
-.encore-info {
-  spacing: 2px;
+.encore-art-badge {
+  margin: 6px;
+  padding: 3px;
+  border-radius: 99px;
+  background-color: rgba(0, 0, 0, 0.55);
 }
 
+/* Track info */
 .encore-title {
-  font-size: 1.2em;
+  font-size: 1.15em;
   font-weight: bold;
 }
 
-.encore-album {
-  font-size: 0.9em;
+.encore-subtitle {
+  font-size: 0.95em;
 }
 
-.encore-card.tinted .encore-artist {
-  color: rgba(246, 245, 244, 0.85);
-}
-
-.encore-card.tinted .encore-album {
-  color: rgba(246, 245, 244, 0.65);
+.encore-card.tinted .encore-subtitle {
+  color: rgba(246, 245, 244, 0.75);
 }
 
 /* Progress */
@@ -120,9 +129,18 @@
   font-feature-settings: "tnum";
 }
 
+/* Wavy seek bar */
+.encore-wavy-slider {
+  height: 20px;
+  -barlevel-height: 4px;
+  -slider-handle-radius: 8px;
+  -encore-wave-wavelength: 22px;
+  -encore-wave-amplitude: 3px;
+}
+
 /* Buttons */
 .encore-controls {
-  spacing: 10px;
+  spacing: 0;
 }
 
 .encore-button {
@@ -151,11 +169,19 @@
 }
 
 .encore-play {
-  padding: 14px;
+  padding: 6px;
 }
 
 .encore-play .encore-button-icon {
-  icon-size: 24px;
+  icon-size: 26px;
+}
+
+.encore-small {
+  padding: 4px;
+}
+
+.encore-small .encore-button-icon {
+  icon-size: 14px;
 }
 
 .encore-toggle:checked {
@@ -174,6 +200,7 @@
 
 /* Lyrics (always on a dark backdrop, so the text is light in both themes) */
 .encore-lyrics {
+  height: 190px;
   border-radius: 12px;
   background-color: rgba(0, 0, 0, 0.45);
 }
@@ -211,4 +238,36 @@
 .encore-lyric-line:current .encore-lyric-text {
   color: #ffffff;
   font-weight: bold;
+}
+
+/* Player bar (left of the card, with several players) */
+.encore-sidebar {
+  spacing: 6px;
+  padding-right: 10px;
+  border-right: 1px solid rgba(127, 127, 127, 0.25);
+}
+
+.encore-tab {
+  padding: 6px 6px 3px 6px;
+  border-radius: 12px;
+}
+
+.encore-tab:hover {
+  background-color: rgba(127, 127, 127, 0.18);
+}
+
+.encore-tab:checked {
+  background-color: rgba(127, 127, 127, 0.35);
+}
+
+.encore-tab:focus {
+  box-shadow: inset 0 0 0 2px rgba(127, 127, 127, 0.5);
+}
+
+.encore-tab-dot {
+  width: 12px;
+  height: 3px;
+  margin-top: 3px;
+  border-radius: 2px;
+  background-color: #f6f5f4;
 }

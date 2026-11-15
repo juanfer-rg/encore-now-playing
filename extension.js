@@ -6,6 +6,7 @@ import {LyricsProvider} from './lib/lyrics/lrclib.js';
 import {MprisManager} from './lib/mpris/manager.js';
 import {NativePlayerHider} from './lib/nativePlayerHider.js';
 import {EncoreIndicator} from './lib/ui/indicator.js';
+import {PanelPlacement} from './lib/ui/panelPlacement.js';
 
 export default class EncoreExtension extends Extension {
     enable() {
@@ -23,7 +24,8 @@ export default class EncoreExtension extends Extension {
 
         this._settings.connectObject(
             'changed::panel-box', () => this._createIndicator(),
-            'changed::panel-index', () => this._createIndicator(),
+            'changed::panel-index', () =>
+                this._placement?.setIndex(this._settings.get_int('panel-index')),
             'changed::hide-native-player', () => this._syncNativeHider(),
             this);
     }
@@ -34,6 +36,8 @@ export default class EncoreExtension extends Extension {
         this._nativeHider.disable();
         this._nativeHider = null;
 
+        this._placement?.destroy();
+        this._placement = null;
         this._indicator?.destroy();
         this._indicator = null;
 
@@ -49,9 +53,12 @@ export default class EncoreExtension extends Extension {
         this._settings = null;
     }
 
-    // The indicator is rebuilt when its position changes: moving it would
-    // need the panel's private boxes.
+    // The indicator is rebuilt when its section changes: moving it to
+    // another section would need the panel's private boxes. The order inside
+    // the section is kept by PanelPlacement.
     _createIndicator() {
+        this._placement?.destroy();
+        this._placement = null;
         this._indicator?.destroy();
         this._indicator = new EncoreIndicator({
             manager: this._manager,
@@ -59,9 +66,10 @@ export default class EncoreExtension extends Extension {
             artCache: this._artCache,
             lyrics: this._lyrics,
         });
-        Main.panel.addToStatusArea(this.uuid, this._indicator,
-            this._settings.get_int('panel-index'),
+        const index = this._settings.get_int('panel-index');
+        Main.panel.addToStatusArea(this.uuid, this._indicator, index,
             this._settings.get_string('panel-box'));
+        this._placement = new PanelPlacement(this._indicator.container, index);
     }
 
     _syncNativeHider() {

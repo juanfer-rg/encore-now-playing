@@ -38,12 +38,17 @@
       <default>0</default>
       <summary>Position inside the top bar section</summary>
     </key>
+    <key name="show-panel-wave" type="b">
+      <default>true</default>
+      <summary>Show the audio wave in the top bar</summary>
+      <description>A line that flows while music plays and flattens when paused.</description>
+    </key>
     <key name="panel-icon" enum="org.gnome.shell.extensions.encore-now-playing.PanelIcon">
-      <default>'album-art'</default>
+      <default>'none'</default>
       <summary>Icon shown in the top bar</summary>
     </key>
     <key name="panel-text" enum="org.gnome.shell.extensions.encore-now-playing.PanelText">
-      <default>'title-artist'</default>
+      <default>'none'</default>
       <summary>Text shown in the top bar</summary>
     </key>
     <key name="show-panel-controls" type="b">
@@ -75,8 +80,8 @@
 
     <!-- Card -->
     <key name="card-width" type="i">
-      <range min="280" max="600"/>
-      <default>360</default>
+      <range min="360" max="640"/>
+      <default>440</default>
       <summary>Width of the player card, in pixels</summary>
     </key>
     <key name="show-volume" type="b">
@@ -89,7 +94,7 @@
     </key>
     <key name="show-player-switcher" type="b">
       <default>true</default>
-      <summary>Show the player switcher when several players are running</summary>
+      <summary>Show a bar with the players' icons when several are running</summary>
     </key>
     <key name="show-lyrics-button" type="b">
       <default>true</default>

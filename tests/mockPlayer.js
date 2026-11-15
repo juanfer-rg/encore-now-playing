@@ -1,7 +1,7 @@
 #!/usr/bin/env -S gjs -m
 // A fake MPRIS player for manual testing without a real music app.
 //
-//   gjs -m tests/mockPlayer.js [name] [--art=PATH|URL] [--lyrics]
+//   gjs -m tests/mockPlayer.js [name] [--art=PATH|URL] [--lyrics] [--desktop=APP_ID]
 //
 // It owns org.mpris.MediaPlayer2.<name> (default "EncoreTest"), cycles
 // through three fake tracks, honours Play/Pause/Next/Previous/Seek/
@@ -148,7 +148,7 @@ function getProperty(p) {
     case 'CanSeek': case 'CanControl': return new GLib.Variant('b', true);
     case 'CanQuit': case 'CanRaise': case 'HasTrackList': return new GLib.Variant('b', p === 'CanQuit');
     case 'Identity': return new GLib.Variant('s', `Encore Mock (${name})`);
-    case 'DesktopEntry': return new GLib.Variant('s', '');
+    case 'DesktopEntry': return new GLib.Variant('s', flags.desktop ?? '');
     case 'SupportedUriSchemes': case 'SupportedMimeTypes': return new GLib.Variant('as', []);
     }
     return null;
