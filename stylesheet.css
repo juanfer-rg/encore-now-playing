@@ -28,6 +28,12 @@
   -encore-bar-gap: 2px;
 }
 
+.encore-wave.disc {
+  width: 22px;
+  height: 18px;
+  -encore-wave-thickness: 1.4px;
+}
+
 .encore-wave.orbit {
   width: 40px;
   height: 18px;

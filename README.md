@@ -16,8 +16,9 @@ mpv-mpris), Spotify, and web browsers playing audio or video, among others.
   - **Wave**: Encore's ribbon, two thin strands that twist around each other
   - **Bars**: rounded bars that rise and fall smoothly
   - **Orbit**: two dots with trails, tracing figures that morph into each other
+  - **Disc**: a little record that spins, pulses with the beat and is now and then scratched backwards
 
-  None of them repeats the same loop: speed, height, the bars' beats and the orbit's figure change
+  None of them repeats the same loop: speed, height, the beats, the orbit's figure and the disc's spin change
   at random, with smooth transitions. It is white, or, with album art colors on, a blend of up to
   three colors of the artwork that is playing. The visualizers are animations, not an analysis of the actual sound.
 - **Optional extras**, all off by default:
@@ -36,11 +37,12 @@ mpv-mpris), Spotify, and web browsers playing audio or video, among others.
   - **Compact**: artwork on the left, controls on the right
   - **Large**: big artwork on top, everything else below it
 - **Contents**:
-  - artwork, with a fixed size in each style (150 px compact, 340 px large) whatever the player or the
+  - artwork, with a fixed size in each style (150 px compact, 300 px large) whatever the player or the
     shape of its image; wide video thumbnails are cropped to a square
   - title and "artist - album [year]", with the player's icon in front; both scroll when they do not fit
   - shuffle, previous, play/pause, next and repeat
-  - a ribbon seek bar whose handle glides smoothly, with a "remaining / total" counter
+  - a ribbon seek bar whose handle glides smoothly, with the elapsed time on the left and
+    "remaining / total" on the right
   - the volume across the bottom, with the percentage; click the speaker to mute or unmute
 - **Several players**: the one playing most recently is shown. With two or more, a bar on the left of
   the card shows each player's icon, with a dot under the ones playing; click one to show it. Other
@@ -75,7 +77,8 @@ mpv-mpris), Spotify, and web browsers playing audio or video, among others.
 - **Colors from album art** (on by default) never tints the card itself. Instead:
   - the waves blend up to three of the artwork's colors
   - the volume slider and the active buttons take its main color
-  - a soft, blurred ambient glow appears behind the artwork
+  - a soft, blurred ambient glow appears behind the artwork, kept discreet and fainter still for light
+    artwork
   - the lyrics get a very subtle backdrop of glows in the artwork's colors that drift slowly
 
   With the option off, a manual accent color is used and there is no glow.
@@ -124,6 +127,8 @@ gnome-extensions prefs encore-now-playing@juanfer-rg.github.io
 | **Card** | Compact or large style, width of the compact card, volume, shuffle/repeat and lyrics buttons, colors from album art, accent color |
 | **Players** | Turn off players you want ignored |
 | **Behavior** | Pause other players, click the artwork to show the player, hide GNOME's media player, online lyrics, album art cache size |
+
+Every option you change gets a reset button (↶) that puts it back to its default.
 
 ## Privacy
 

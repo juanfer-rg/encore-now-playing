@@ -32,7 +32,7 @@ extension.js
  │       └─ playerSidebar.js ← player icons on the left (several players)
  ├─ lib/ui/panelLyrics.js    ← current lyric line for the top bar, even with the card closed
  ├─ lib/ui/wave.js           ← animation driver + Encore's ribbon (two twisting strands)
- ├─ lib/ui/visualizer.js     ← top bar visualizer: wave, bars, orbit
+ ├─ lib/ui/visualizer.js     ← top bar visualizer: wave, bars, orbit, disc
  ├─ lib/art/artCache.js      ← http artwork → ~/.cache, and color extraction
  ├─ lib/lyrics/lrclib.js     ← lyrics: player, local files, lrclib.net, lyrics.ovh
  │   ├─ local.js             ← "<track>.lrc" beside local files, and tags inside them
@@ -112,7 +112,8 @@ touching the code.
 
 `PanelVisualizer` (`lib/ui/visualizer.js`) is always shown and draws one of three styles with cairo:
 the wave, bars (rounded and mirrored around the middle, each driven by sines of its own plus random
-beats) or orbit (two dots with fading trails tracing Lissajous figures). They are animations, not an
+beats), orbit (two dots with fading trails tracing Lissajous figures) or disc (a spinning record with
+glints that turn with it, pulsing on the beat and now and then scratched backwards for half a second). They are animations, not an
 analysis of the sound: GNOME Shell cannot read the audio without spawning a capture process.
 
 None of them loops the same way. `Drift` (in `wave.js`) is a value that picks a new random target

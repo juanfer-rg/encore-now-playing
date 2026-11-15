@@ -30,6 +30,7 @@
     <value nick="wave" value="0"/>
     <value nick="bars" value="1"/>
     <value nick="orbit" value="2"/>
+    <value nick="disc" value="3"/>
   </enum>
 
   <enum id="org.gnome.shell.extensions.encore-now-playing.CardLayout">
@@ -53,7 +54,7 @@
     <key name="panel-visualizer" enum="org.gnome.shell.extensions.encore-now-playing.Visualizer">
       <default>'wave'</default>
       <summary>Style of the top bar visualizer</summary>
-      <description>wave: flowing line; bars: rounded bars that rise and fall; orbit: two dots tracing figures that morph into each other. The visualizer is always shown and moves while something is playing.</description>
+      <description>wave: flowing line; bars: rounded bars that rise and fall; orbit: two dots tracing figures that morph into each other; disc: a spinning record that pulses with the beat. The visualizer is always shown and moves while something is playing.</description>
     </key>
     <key name="panel-icon" enum="org.gnome.shell.extensions.encore-now-playing.PanelIcon">
       <default>'none'</default>
