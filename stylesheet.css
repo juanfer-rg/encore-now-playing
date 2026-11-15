@@ -211,12 +211,16 @@
 /* Volume + lyrics row */
 .encore-bottom,
 .encore-volume {
-  spacing: 8px;
+  spacing: 6px;
 }
 
 .encore-volume-slider {
-  -barlevel-height: 3px;
-  -slider-handle-radius: 6px;
+  -barlevel-height: 5px;
+  -slider-handle-radius: 7px;
+}
+
+.encore-mute {
+  padding: 4px;
 }
 
 .encore-volume-label {

@@ -62,6 +62,11 @@
       <default>'none'</default>
       <summary>Text shown in the top bar</summary>
     </key>
+    <key name="panel-lyrics" type="b">
+      <default>false</default>
+      <summary>Show the current lyric line in the top bar</summary>
+      <description>Replaces the top bar text while on. Uses the same lyrics sources as the card.</description>
+    </key>
     <key name="show-panel-controls" type="b">
       <default>false</default>
       <summary>Show previous/play/next buttons in the top bar</summary>

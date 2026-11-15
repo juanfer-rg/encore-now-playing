@@ -30,6 +30,7 @@ extension.js
  │       ├─ progressBar.js   ← wavy seek bar + position timer
  │       ├─ lyricsView.js    ← lyrics canvas, unfolded below the card
  │       └─ playerSidebar.js ← player icons on the left (several players)
+ ├─ lib/ui/panelLyrics.js    ← current lyric line for the top bar, even with the card closed
  ├─ lib/ui/wave.js           ← animation driver + Encore's ribbon (two twisting strands)
  ├─ lib/ui/visualizer.js     ← top bar visualizer: wave, bars, signal
  ├─ lib/art/artCache.js      ← http artwork → ~/.cache, and color extraction
@@ -91,12 +92,16 @@ twisted, scaled by a slow swell that travels along them. When playback stops it 
 straight line. `lib/ui/wave.js` has two parts:
 
 - **`WaveAnimator`** moves it. On every frame of a `Clutter.Timeline` it advances the phase and eases
-  the amplitude towards 1 (playing) or 0 (paused). The timeline only runs while the actor is visible
+  the amplitude towards 1 (playing) or 0 (paused). The phase is never wrapped: the travelling swell
+  moves at a different speed than the strands, and wrapping made the whole ribbon jump once per
+  cycle. The timeline only runs while the actor is visible
   and something is moving. When animations are turned off system-wide, it is drawn still.
 - **`drawRibbon()`** draws the two strands (`traceStrand()`): the faint, thinner partner first, then
   the main one. The top bar visualizer tapers it towards both ends. The seek bar (`WavySlider` in
   `progressBar.js`) draws it only for the part already played, followed by a thin straight line and
-  a round handle with a soft halo. `WavySlider` subclasses the Shell's `Slider`, so dragging, the
+  a round handle with a soft halo. The position itself only updates four times a second, so the
+  handle is drawn where it *would* be now (`setLive()`: last position plus the time since, at playback
+  speed) and glides on every frame instead of moving in steps. `WavySlider` subclasses the Shell's `Slider`, so dragging, the
   keyboard and screen readers keep working.
 
 Sizes and shape live in `stylesheet.css` as `-encore-wave-*` lengths, so they can be tuned without

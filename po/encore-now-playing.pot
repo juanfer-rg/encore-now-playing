@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-15 08:30-0500\n"
+"POT-Creation-Date: 2026-11-15 09:20-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -244,7 +244,7 @@ msgstr ""
 msgid "Icon"
 msgstr ""
 
-#: lib/prefs/panelPage.js:27 lib/prefs/panelPage.js:32
+#: lib/prefs/panelPage.js:27 lib/prefs/panelPage.js:34
 msgid "None"
 msgstr ""
 
@@ -256,71 +256,79 @@ msgstr ""
 msgid "Album art"
 msgstr ""
 
-#: lib/prefs/panelPage.js:31 lib/prefs/panelPage.js:41
+#: lib/prefs/panelPage.js:31
+msgid "Show lyrics"
+msgstr ""
+
+#: lib/prefs/panelPage.js:32
+msgid "The current line of the lyrics, instead of the text"
+msgstr ""
+
+#: lib/prefs/panelPage.js:33 lib/prefs/panelPage.js:46
 msgid "Text"
 msgstr ""
 
-#: lib/prefs/panelPage.js:33
+#: lib/prefs/panelPage.js:35
 msgid "Title"
 msgstr ""
 
-#: lib/prefs/panelPage.js:34
+#: lib/prefs/panelPage.js:36
 msgid "Title · Artist"
 msgstr ""
 
-#: lib/prefs/panelPage.js:35
+#: lib/prefs/panelPage.js:37
 msgid "Artist – Title"
 msgstr ""
 
-#: lib/prefs/panelPage.js:37
+#: lib/prefs/panelPage.js:42
 msgid "Playback buttons"
 msgstr ""
 
-#: lib/prefs/panelPage.js:38
+#: lib/prefs/panelPage.js:43
 msgid "Previous, play/pause and next next to the text"
 msgstr ""
 
-#: lib/prefs/panelPage.js:42
+#: lib/prefs/panelPage.js:47
 msgid "Maximum width"
 msgstr ""
 
-#: lib/prefs/panelPage.js:43
+#: lib/prefs/panelPage.js:48
 msgid "In pixels"
 msgstr ""
 
-#: lib/prefs/panelPage.js:45
+#: lib/prefs/panelPage.js:50
 msgid "Scroll long text"
 msgstr ""
 
-#: lib/prefs/panelPage.js:46
+#: lib/prefs/panelPage.js:51
 msgid "Scrolling speed"
 msgstr ""
 
-#: lib/prefs/panelPage.js:47
+#: lib/prefs/panelPage.js:52
 msgid "Pixels per second"
 msgstr ""
 
-#: lib/prefs/panelPage.js:53
+#: lib/prefs/panelPage.js:58
 msgid "Mouse"
 msgstr ""
 
-#: lib/prefs/panelPage.js:53
+#: lib/prefs/panelPage.js:58
 msgid "Middle-click the indicator to play or pause."
 msgstr ""
 
-#: lib/prefs/panelPage.js:54
+#: lib/prefs/panelPage.js:59
 msgid "Scroll wheel"
 msgstr ""
 
-#: lib/prefs/panelPage.js:55
+#: lib/prefs/panelPage.js:60
 msgid "Nothing"
 msgstr ""
 
-#: lib/prefs/panelPage.js:56
+#: lib/prefs/panelPage.js:61
 msgid "Change volume"
 msgstr ""
 
-#: lib/prefs/panelPage.js:57
+#: lib/prefs/panelPage.js:62
 msgid "Change track"
 msgstr ""
 
@@ -349,29 +357,29 @@ msgstr ""
 msgid "Start a music player and press refresh"
 msgstr ""
 
-#: lib/ui/indicator.js:28 lib/ui/indicator.js:247
+#: lib/ui/indicator.js:29 lib/ui/indicator.js:239
 msgid "Now Playing"
 msgstr ""
 
-#: lib/ui/indicator.js:57 lib/ui/mediaCard.js:195
+#: lib/ui/indicator.js:58 lib/ui/mediaCard.js:195
 msgid "Previous"
 msgstr ""
 
-#: lib/ui/indicator.js:58 lib/ui/indicator.js:254 lib/ui/mediaCard.js:197
-#: lib/ui/mediaCard.js:407
+#: lib/ui/indicator.js:59 lib/ui/indicator.js:246 lib/ui/mediaCard.js:197
+#: lib/ui/mediaCard.js:417
 msgid "Play"
 msgstr ""
 
-#: lib/ui/indicator.js:59 lib/ui/mediaCard.js:199
+#: lib/ui/indicator.js:60 lib/ui/mediaCard.js:199
 msgid "Next"
 msgstr ""
 
-#: lib/ui/indicator.js:240 lib/ui/mediaCard.js:389 lib/ui/mediaCard.js:591
-msgid "Nothing playing"
+#: lib/ui/indicator.js:246 lib/ui/mediaCard.js:417
+msgid "Pause"
 msgstr ""
 
-#: lib/ui/indicator.js:254 lib/ui/mediaCard.js:407
-msgid "Pause"
+#: lib/ui/indicator.js:357 lib/ui/mediaCard.js:399 lib/ui/mediaCard.js:616
+msgid "Nothing playing"
 msgstr ""
 
 #: lib/ui/mediaCard.js:167
@@ -390,29 +398,37 @@ msgstr ""
 msgid "Repeat"
 msgstr ""
 
-#: lib/ui/mediaCard.js:228
+#: lib/ui/mediaCard.js:229 lib/ui/mediaCard.js:560
+msgid "Mute"
+msgstr ""
+
+#: lib/ui/mediaCard.js:237
 msgid "Volume"
 msgstr ""
 
-#: lib/ui/mediaCard.js:601
+#: lib/ui/mediaCard.js:560
+msgid "Unmute"
+msgstr ""
+
+#: lib/ui/mediaCard.js:626
 msgid "Looking for lyrics…"
 msgstr ""
 
-#: lib/ui/mediaCard.js:607
+#: lib/ui/mediaCard.js:632
 msgid "Instrumental"
 msgstr ""
 
-#: lib/ui/mediaCard.js:611
+#: lib/ui/mediaCard.js:636
 msgid ""
 "This player does not provide lyrics. You can enable online lookup "
 "(lrclib.net, lyrics.ovh) in the preferences."
 msgstr ""
 
-#: lib/ui/mediaCard.js:613
+#: lib/ui/mediaCard.js:638
 msgid "No lyrics found"
 msgstr ""
 
-#: lib/ui/progressBar.js:153
+#: lib/ui/progressBar.js:182
 msgid "Track position"
 msgstr ""
 
@@ -444,95 +460,104 @@ msgid "Text shown in the top bar"
 msgstr ""
 
 #: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:67
-msgid "Show previous/play/next buttons in the top bar"
+msgid "Show the current lyric line in the top bar"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:68
+msgid ""
+"Replaces the top bar text while on. Uses the same lyrics sources as the card."
 msgstr ""
 
 #: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:72
+msgid "Show previous/play/next buttons in the top bar"
+msgstr ""
+
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:77
 msgid "Maximum width of the top bar text, in pixels"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:76
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:81
 msgid "Scroll text that does not fit"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:81
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:86
 msgid "Scrolling speed, in pixels per second"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:85
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:90
 msgid "Hide the indicator when no player is running"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:89
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:94
 msgid "What scrolling over the indicator does"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:95
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:100
 msgid "Card layout"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:96
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:101
 msgid "compact: artwork on the left; large: big artwork on top."
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:101
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:106
 msgid "Width of the player card, in pixels"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:105
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:110
 msgid "Show the volume slider"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:109
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:114
 msgid "Show the shuffle and repeat buttons"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:113
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:118
 msgid "Show the lyrics button"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:117
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:122
 msgid ""
 "Color the waves and volume from the album art and add an ambient glow behind "
 "it"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:121
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:126
 msgid "Accent color used when dynamic colors are off"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:127
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:132
 msgid "Players to ignore"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:128
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:133
 msgid ""
 "Player keys (the MPRIS bus name without the org.mpris.MediaPlayer2. prefix "
 "and instance suffix)."
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:132
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:137
 msgid "Hide GNOME's built-in media player in the notification list"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:136
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:141
 msgid "Look up lyrics online (lrclib.net, lyrics.ovh)"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:137
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:142
 msgid ""
 "When enabled, the artist, title, album and duration of the current track are "
 "sent to lrclib.net and lyrics.ovh."
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:141
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:146
 msgid "Clicking the album art brings the player window to the front"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:145
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:150
 msgid "Pause other players when one starts playing"
 msgstr ""
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:150
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:155
 msgid "Maximum size of the album art cache, in MB"
 msgstr ""
