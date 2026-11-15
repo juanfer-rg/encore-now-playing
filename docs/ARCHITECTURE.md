@@ -112,8 +112,9 @@ touching the code.
 
 `PanelVisualizer` (`lib/ui/visualizer.js`) is always shown and draws one of three styles with cairo:
 the wave, bars (rounded and mirrored around the middle, each driven by sines of its own plus random
-beats), orbit (two dots with fading trails tracing Lissajous figures) or disc (a spinning record with
-glints that turn with it, pulsing on the beat and now and then scratched backwards for half a second). They are animations, not an
+beats), orbit (two dots with fading trails tracing Lissajous figures) or disc (an old acetate: light wedges
+that sweep round with it, a two-tone label, a tonearm that rests on it while playing and swings off
+when paused; it pulses on the beat and is now and then scratched backwards for half a second). They are animations, not an
 analysis of the sound: GNOME Shell cannot read the audio without spawning a capture process.
 
 None of them loops the same way. `Drift` (in `wave.js`) is a value that picks a new random target

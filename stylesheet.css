@@ -29,9 +29,9 @@
 }
 
 .encore-wave.disc {
-  width: 22px;
-  height: 18px;
-  -encore-wave-thickness: 1.4px;
+  width: 30px;
+  height: 20px;
+  -encore-wave-thickness: 1.2px;
 }
 
 .encore-wave.orbit {

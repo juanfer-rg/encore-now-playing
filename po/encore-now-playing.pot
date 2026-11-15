@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-15 09:57-0500\n"
+"POT-Creation-Date: 2026-11-15 10:23-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -57,7 +57,7 @@ msgid ""
 msgstr ""
 
 #: lib/prefs/behaviorPage.js:59 lib/prefs/panelPage.js:37
-#: lib/ui/mediaCard.js:203
+#: lib/ui/mediaCard.js:205
 msgid "Lyrics"
 msgstr ""
 
@@ -100,16 +100,16 @@ msgid_plural "Removed %d files"
 msgstr[0] ""
 msgstr[1] ""
 
-#: lib/prefs/behaviorPage.js:85
+#: lib/prefs/behaviorPage.js:87
 msgid "About"
 msgstr ""
 
-#: lib/prefs/behaviorPage.js:88
+#: lib/prefs/behaviorPage.js:90
 #, javascript-format
 msgid "Version %s"
 msgstr ""
 
-#: lib/prefs/behaviorPage.js:90
+#: lib/prefs/behaviorPage.js:92
 msgid "Website"
 msgstr ""
 
@@ -175,8 +175,36 @@ msgstr ""
 msgid "Accent color"
 msgstr ""
 
-#: lib/prefs/common.js:22 lib/prefs/common.js:26
-msgid "Reset to default"
+#: lib/prefs/common.js:46
+msgid "Changed from the default"
+msgstr ""
+
+#: lib/prefs/common.js:65
+msgid "On"
+msgstr ""
+
+#: lib/prefs/common.js:65
+msgid "Off"
+msgstr ""
+
+#: lib/prefs/common.js:125
+msgid "Restore defaults for this page"
+msgstr ""
+
+#: lib/prefs/common.js:147
+msgid "Restore defaults?"
+msgstr ""
+
+#: lib/prefs/common.js:148
+msgid "These options on this page will go back to their defaults:"
+msgstr ""
+
+#: lib/prefs/common.js:152
+msgid "Cancel"
+msgstr ""
+
+#: lib/prefs/common.js:153
+msgid "Restore defaults"
 msgstr ""
 
 #: lib/prefs/panelPage.js:6
@@ -250,6 +278,7 @@ msgid "Icon"
 msgstr ""
 
 #: lib/prefs/panelPage.js:28 lib/prefs/panelPage.js:33
+#: lib/prefs/playersPage.js:46
 msgid "None"
 msgstr ""
 
@@ -333,28 +362,32 @@ msgstr ""
 msgid "Change track"
 msgstr ""
 
-#: lib/prefs/playersPage.js:43
+#: lib/prefs/playersPage.js:44
 msgid "Players"
 msgstr ""
 
 #: lib/prefs/playersPage.js:45
+msgid "Hidden players"
+msgstr ""
+
+#: lib/prefs/playersPage.js:48
 msgid "Media players"
 msgstr ""
 
-#: lib/prefs/playersPage.js:46
+#: lib/prefs/playersPage.js:49
 msgid ""
 "Turn off a player to ignore it. Players appear here while they are running."
 msgstr ""
 
-#: lib/prefs/playersPage.js:50
+#: lib/prefs/playersPage.js:53
 msgid "Refresh"
 msgstr ""
 
-#: lib/prefs/playersPage.js:77
+#: lib/prefs/playersPage.js:80
 msgid "No players running"
 msgstr ""
 
-#: lib/prefs/playersPage.js:78
+#: lib/prefs/playersPage.js:81
 msgid "Start a music player and press refresh"
 msgstr ""
 
@@ -362,70 +395,70 @@ msgstr ""
 msgid "Now Playing"
 msgstr ""
 
-#: lib/ui/indicator.js:58 lib/ui/mediaCard.js:195
+#: lib/ui/indicator.js:58 lib/ui/mediaCard.js:197
 msgid "Previous"
 msgstr ""
 
-#: lib/ui/indicator.js:59 lib/ui/indicator.js:246 lib/ui/mediaCard.js:197
-#: lib/ui/mediaCard.js:417
+#: lib/ui/indicator.js:59 lib/ui/indicator.js:246 lib/ui/mediaCard.js:199
+#: lib/ui/mediaCard.js:419
 msgid "Play"
 msgstr ""
 
-#: lib/ui/indicator.js:60 lib/ui/mediaCard.js:199
+#: lib/ui/indicator.js:60 lib/ui/mediaCard.js:201
 msgid "Next"
 msgstr ""
 
-#: lib/ui/indicator.js:246 lib/ui/mediaCard.js:417
+#: lib/ui/indicator.js:246 lib/ui/mediaCard.js:419
 msgid "Pause"
 msgstr ""
 
-#: lib/ui/indicator.js:357 lib/ui/mediaCard.js:399 lib/ui/mediaCard.js:620
+#: lib/ui/indicator.js:357 lib/ui/mediaCard.js:401 lib/ui/mediaCard.js:666
 msgid "Nothing playing"
 msgstr ""
 
-#: lib/ui/mediaCard.js:167
+#: lib/ui/mediaCard.js:169
 msgid "Show player window"
 msgstr ""
 
-#: lib/ui/mediaCard.js:187
+#: lib/ui/mediaCard.js:189
 msgid "Change layout"
 msgstr ""
 
-#: lib/ui/mediaCard.js:193
+#: lib/ui/mediaCard.js:195
 msgid "Shuffle"
 msgstr ""
 
-#: lib/ui/mediaCard.js:201
+#: lib/ui/mediaCard.js:203
 msgid "Repeat"
 msgstr ""
 
-#: lib/ui/mediaCard.js:229 lib/ui/mediaCard.js:564
+#: lib/ui/mediaCard.js:231 lib/ui/mediaCard.js:566
 msgid "Mute"
 msgstr ""
 
-#: lib/ui/mediaCard.js:237
+#: lib/ui/mediaCard.js:239
 msgid "Volume"
 msgstr ""
 
-#: lib/ui/mediaCard.js:564
+#: lib/ui/mediaCard.js:566
 msgid "Unmute"
 msgstr ""
 
-#: lib/ui/mediaCard.js:630
+#: lib/ui/mediaCard.js:676
 msgid "Looking for lyrics…"
 msgstr ""
 
-#: lib/ui/mediaCard.js:636
+#: lib/ui/mediaCard.js:682
 msgid "Instrumental"
 msgstr ""
 
-#: lib/ui/mediaCard.js:640
+#: lib/ui/mediaCard.js:686
 msgid ""
 "This player does not provide lyrics. You can enable online lookup "
 "(lrclib.net, lyrics.ovh) in the preferences."
 msgstr ""
 
-#: lib/ui/mediaCard.js:642
+#: lib/ui/mediaCard.js:688
 msgid "No lyrics found"
 msgstr ""
 

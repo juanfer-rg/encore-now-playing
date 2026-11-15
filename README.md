@@ -16,7 +16,9 @@ mpv-mpris), Spotify, and web browsers playing audio or video, among others.
   - **Wave**: Encore's ribbon, two thin strands that twist around each other
   - **Bars**: rounded bars that rise and fall smoothly
   - **Orbit**: two dots with trails, tracing figures that morph into each other
-  - **Disc**: a little record that spins, pulses with the beat and is now and then scratched backwards
+  - **Disc**: an old acetate record with sweeping sheen and a two-tone label, and a tonearm that rests
+    on it while playing and lifts when paused; it pulses with the beat and is now and then scratched
+    backwards
 
   None of them repeats the same loop: speed, height, the beats, the orbit's figure and the disc's spin change
   at random, with smooth transitions. It is white, or, with album art colors on, a blend of up to
@@ -128,7 +130,9 @@ gnome-extensions prefs encore-now-playing@juanfer-rg.github.io
 | **Players** | Turn off players you want ignored |
 | **Behavior** | Pause other players, click the artwork to show the player, hide GNOME's media player, online lyrics, album art cache size |
 
-Every option you change gets a reset button (↶) that puts it back to its default.
+Options you have changed are marked with a dot. Each page ends with a *Restore defaults for this
+page* button, which lists exactly what it will change (for example, "Order: 3 → 0") and asks for
+confirmation first.
 
 ## Privacy
 

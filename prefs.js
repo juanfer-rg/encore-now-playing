@@ -11,9 +11,9 @@ export default class EncorePreferences extends ExtensionPreferences {
         window.set_default_size(640, 720);
         window.search_enabled = true;
 
-        window.add(buildPanelPage(settings));
-        window.add(buildCardPage(settings));
-        window.add(buildPlayersPage(settings));
+        window.add(buildPanelPage(settings, window));
+        window.add(buildCardPage(settings, window));
+        window.add(buildPlayersPage(settings, window));
         window.add(buildBehaviorPage(settings, window, this.metadata));
 
         // Keep the settings object alive as long as the window.
