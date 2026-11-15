@@ -30,7 +30,8 @@ extension.js
  │       ├─ progressBar.js   ← wavy seek bar + position timer
  │       ├─ lyricsView.js    ← synced lyrics, unfolded below the card
  │       └─ playerSidebar.js ← player icons on the left (several players)
- ├─ lib/ui/wave.js           ← the Android-style squiggly line (top bar and seek bar)
+ ├─ lib/ui/wave.js           ← animation driver + the Android-style squiggly line
+ ├─ lib/ui/visualizer.js     ← top bar visualizer: wave, Winamp spectrum, Winamp scope
  ├─ lib/art/artCache.js      ← http artwork → ~/.cache, and color extraction
  ├─ lib/lyrics/lrclib.js     ← lyrics from the player or lrclib.net
  └─ lib/nativePlayerHider.js ← hides GNOME's built-in player (private API)
@@ -97,6 +98,17 @@ is destroyed.
 Sizes and wave shape live in `stylesheet.css` as `-encore-wave-*` lengths, so they can be tuned
 without touching the code.
 
+## The top bar visualizer
+
+`PanelVisualizer` (`lib/ui/visualizer.js`) draws one of three styles with cairo: the wave, Winamp's
+spectrum analyzer (bars that pick new random heights every 90 ms, lower bands louder, with peak caps
+that fall slowly) or Winamp's oscilloscope (a sum of three drifting sines). They are animations, not
+an analysis of the sound: GNOME Shell cannot read the audio without spawning a capture process.
+
+It moves while *any* player plays: `MprisManager` emits `playback-changed` whenever the set of playing
+players, or what they play, changes, and `indicator.js` asks `manager.playing`. With album art colors
+on, `lib/art/accent.js` gives it the accent of the artwork that is playing.
+
 ## Colors from the artwork
 
 `palette.js` imports nothing from GNOME, which is why it can be tested with plain `gjs`:
@@ -107,7 +119,28 @@ without touching the code.
 4. The heaviest bucket is the main color; the strongest bucket at least 60° of hue away is the accent.
 5. `cardColors()` darkens the background and brightens the accent until both read well.
 
-The accent colors the wave in the top bar, the seek bar, the volume slider and the active toggles.
+The accent colors the wave in the top bar, the seek bar, the volume slider, the active toggles and
+the dots in the player bar. The card background is never tinted. With "Colors from album art" on,
+`mediaCard.js` also shows an ambient glow: a blurred copy of the artwork (`Shell.BlurEffect`) placed
+behind it, bigger than it, inside a fixed-size holder so it can spill around the artwork without
+changing the layout.
+
+## Light and dark style
+
+Text, buttons and sliders inherit the popup's colors, so they follow GNOME's style on their own. The
+few colors the stylesheet pins (the lyrics backdrop and text, the player dots, the artwork badge) have
+light counterparts under `.encore-light`, a class `indicator.js` sets on the popup box while
+`Main.getStyleVariant()` is `light`, updated live on `notify::color-scheme`.
+
+A separate `stylesheet-light.css` would not work well here: GNOME loads only one stylesheet per
+extension, and St does not rank `@import`ed rules above the Shell theme, so it would have to repeat
+every rule.
+
+## The two card layouts
+
+`MediaCard` creates its widgets once and `_arrange()` moves them into the containers of the current
+layout (`compact` or `large`, from the `card-layout` setting). The button in the card's corner just
+flips that setting, so the choice is remembered and the preferences stay in sync.
 
 ## Ideas for going further
 

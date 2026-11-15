@@ -25,6 +25,17 @@
     <value nick="track" value="2"/>
   </enum>
 
+  <enum id="org.gnome.shell.extensions.encore-now-playing.Visualizer">
+    <value nick="wave" value="0"/>
+    <value nick="spectrum" value="1"/>
+    <value nick="scope" value="2"/>
+  </enum>
+
+  <enum id="org.gnome.shell.extensions.encore-now-playing.CardLayout">
+    <value nick="compact" value="0"/>
+    <value nick="large" value="1"/>
+  </enum>
+
   <schema id="org.gnome.shell.extensions.encore-now-playing"
           path="/org/gnome/shell/extensions/encore-now-playing/">
 
@@ -40,8 +51,13 @@
     </key>
     <key name="show-panel-wave" type="b">
       <default>true</default>
-      <summary>Show the audio wave in the top bar</summary>
-      <description>A line that flows while music plays and flattens when paused.</description>
+      <summary>Show the audio visualizer in the top bar</summary>
+      <description>It moves while something is playing and settles when playback stops.</description>
+    </key>
+    <key name="panel-visualizer" enum="org.gnome.shell.extensions.encore-now-playing.Visualizer">
+      <default>'wave'</default>
+      <summary>Style of the top bar visualizer</summary>
+      <description>wave: Android-style line; spectrum and scope: Winamp's classic spectrum analyzer and oscilloscope.</description>
     </key>
     <key name="panel-icon" enum="org.gnome.shell.extensions.encore-now-playing.PanelIcon">
       <default>'none'</default>
@@ -79,6 +95,11 @@
     </key>
 
     <!-- Card -->
+    <key name="card-layout" enum="org.gnome.shell.extensions.encore-now-playing.CardLayout">
+      <default>'compact'</default>
+      <summary>Card layout</summary>
+      <description>compact: artwork on the left; large: big artwork on top.</description>
+    </key>
     <key name="card-width" type="i">
       <range min="360" max="640"/>
       <default>440</default>
@@ -92,17 +113,13 @@
       <default>true</default>
       <summary>Show the shuffle and repeat buttons</summary>
     </key>
-    <key name="show-player-switcher" type="b">
-      <default>true</default>
-      <summary>Show a bar with the players' icons when several are running</summary>
-    </key>
     <key name="show-lyrics-button" type="b">
       <default>true</default>
       <summary>Show the lyrics button</summary>
     </key>
     <key name="dynamic-colors" type="b">
       <default>true</default>
-      <summary>Tint the card with colors taken from the album art</summary>
+      <summary>Color the waves and volume from the album art and add an ambient glow behind it</summary>
     </key>
     <key name="accent-color" type="s">
       <default>'#3584e4'</default>

@@ -20,6 +20,20 @@
   -encore-wave-amplitude: 3.5px;
 }
 
+/* Winamp classic styles (lib/ui/visualizer.js) */
+.encore-wave.spectrum {
+  width: 34px;
+  height: 16px;
+  -encore-bar-width: 2px;
+  -encore-bar-gap: 1px;
+}
+
+.encore-wave.scope {
+  width: 38px;
+  height: 16px;
+  -encore-wave-thickness: 1.5px;
+}
+
 .encore-panel-controls {
   spacing: 0;
 }
@@ -35,14 +49,6 @@
 
 /* ---- Popup ------------------------------------------------------------- */
 
-.encore-card-item,
-.encore-card-item:hover,
-.encore-card-item:focus {
-  padding: 0;
-  spacing: 0;
-  background-color: transparent;
-}
-
 .encore-card {
   padding: 10px;
   spacing: 10px;
@@ -52,8 +58,22 @@
   spacing: 12px;
 }
 
-.encore-card.tinted {
-  color: #f6f5f4;
+/* Layouts */
+.encore-layout-compact,
+.encore-layout-large {
+  spacing: 12px;
+}
+
+.encore-info {
+  spacing: 2px;
+}
+
+.encore-large-controls {
+  spacing: 4px;
+}
+
+.encore-transport {
+  spacing: 8px;
 }
 
 /* Compact layout: artwork left, controls right */
@@ -70,14 +90,17 @@
   spacing: 8px;
 }
 
-.encore-card-wave {
-  width: 22px;
-  height: 14px;
-  -encore-wave-wavelength: 8px;
-  -encore-wave-amplitude: 3px;
+/* Artwork, with the ambient glow behind it (blurred copy, see mediaCard.js) */
+.encore-ambient {
+  /* keep in sync with AMBIENT_SPREAD in lib/ui/mediaCard.js */
+  padding: 48px;
 }
 
-/* Artwork */
+.encore-ambient-image {
+  border-radius: 16px;
+  background-size: cover;
+}
+
 .encore-art-button {
   border-radius: 12px;
   padding: 0;
@@ -113,10 +136,6 @@
 
 .encore-subtitle {
   font-size: 0.95em;
-}
-
-.encore-card.tinted .encore-subtitle {
-  color: rgba(246, 245, 244, 0.75);
 }
 
 /* Progress */
@@ -194,50 +213,76 @@
   spacing: 8px;
 }
 
+.encore-volume-slider {
+  width: 96px;
+  -barlevel-height: 3px;
+  -slider-handle-radius: 6px;
+}
+
+.encore-volume-label {
+  font-size: 0.85em;
+  font-feature-settings: "tnum";
+  min-width: 2em;
+}
+
 .encore-volume-icon {
   icon-size: 16px;
 }
 
-/* Lyrics (always on a dark backdrop, so the text is light in both themes) */
+/* Lyrics, Spotify-style: on a dark backdrop, upcoming lines faint, sung
+   lines dimmed, the current one bright */
 .encore-lyrics {
   height: 190px;
   border-radius: 12px;
-  background-color: rgba(0, 0, 0, 0.45);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.encore-lyrics.large {
+  height: 220px;
 }
 
 .encore-lyrics-box {
-  padding: 12px;
-  spacing: 2px;
+  padding: 14px 12px;
+  spacing: 4px;
 }
 
 .encore-lyric-line {
   padding: 4px 6px;
   border-radius: 8px;
+  transition-duration: 200ms;
 }
 
 .encore-lyric-line:hover {
   background-color: rgba(255, 255, 255, 0.08);
 }
 
-.encore-lyric-text,
-.encore-lyrics-plain,
-.encore-lyrics-message {
-  color: rgba(255, 255, 255, 0.55);
-  font-size: 1.05em;
+.encore-lyric-text {
+  font-size: 1.15em;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.32);
 }
 
-.encore-lyrics-plain {
-  color: rgba(255, 255, 255, 0.85);
+.encore-lyrics.large .encore-lyric-text {
+  font-size: 1.35em;
 }
 
-.encore-lyrics-message {
-  text-align: center;
-  padding: 24px 8px;
+.encore-lyric-line:past .encore-lyric-text {
+  color: rgba(255, 255, 255, 0.62);
 }
 
 .encore-lyric-line:current .encore-lyric-text {
   color: #ffffff;
-  font-weight: bold;
+}
+
+.encore-lyrics-plain {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.05em;
+}
+
+.encore-lyrics-message {
+  color: rgba(255, 255, 255, 0.55);
+  text-align: center;
+  padding: 24px 8px;
 }
 
 /* Player bar (left of the card, with several players) */
@@ -270,4 +315,45 @@
   margin-top: 3px;
   border-radius: 2px;
   background-color: #f6f5f4;
+}
+
+/* ---- Light style ------------------------------------------------------- */
+/* Text, buttons and sliders already follow the Shell's popup colors. Only
+   the colors pinned above need light counterparts; the class is set on the
+   popup box by lib/ui/indicator.js while GNOME uses its light style. */
+
+.encore-light .encore-lyrics {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+.encore-light .encore-lyric-line:hover {
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
+.encore-light .encore-lyric-text {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.encore-light .encore-lyric-line:past .encore-lyric-text {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.encore-light .encore-lyric-line:current .encore-lyric-text {
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.encore-light .encore-lyrics-plain {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.encore-light .encore-lyrics-message {
+  color: rgba(0, 0, 0, 0.55);
+}
+
+.encore-light .encore-tab-dot {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.encore-light .encore-art-badge {
+  background-color: rgba(255, 255, 255, 0.8);
 }

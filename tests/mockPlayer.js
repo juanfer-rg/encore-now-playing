@@ -76,7 +76,7 @@ function makeArt(path, rgb) {
 
 const tmp = GLib.get_tmp_dir();
 const TRACKS = [
-    {title: 'Encore (Test Track One)', artist: 'The Mock Players', album: 'Fake Album', length: 185e6, color: [220, 60, 90]},
+    {title: 'Encore (Test Track One)', artist: 'The Mock Players', album: 'Fake Album', year: '2008-11-25', length: 185e6, color: [220, 60, 90]},
     {title: 'A Rather Long Title That Will Definitely Need To Scroll In The Top Bar', artist: 'Someone Else', album: 'Second Album', length: 245e6, color: [40, 140, 210]},
     {title: 'No Art Here', artist: 'Nobody', album: '', length: 95e6, color: null},
 ].map((t, i) => ({
@@ -118,6 +118,8 @@ function metadata() {
     };
     if (t.art)
         m['mpris:artUrl'] = new GLib.Variant('s', t.art);
+    if (t.year)
+        m['xesam:contentCreated'] = new GLib.Variant('s', t.year);
     if (flags.lyrics)
         m['xesam:asText'] = new GLib.Variant('s', LYRICS);
     return m;
