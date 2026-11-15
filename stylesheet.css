@@ -1,0 +1,214 @@
+/* ---- Top bar ----------------------------------------------------------- */
+
+.encore-panel-box {
+  spacing: 6px;
+}
+
+.encore-panel-art {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  background-size: cover;
+}
+
+.encore-panel-controls {
+  spacing: 0;
+}
+
+.encore-panel-button {
+  padding: 0 2px;
+  border-radius: 99px;
+}
+
+.encore-panel-button:insensitive {
+  color: rgba(127, 127, 127, 0.6);
+}
+
+/* ---- Popup ------------------------------------------------------------- */
+
+.encore-card-item,
+.encore-card-item:hover,
+.encore-card-item:focus {
+  padding: 0;
+  spacing: 0;
+  background-color: transparent;
+}
+
+.encore-card {
+  padding: 10px;
+  spacing: 12px;
+}
+
+.encore-card.tinted {
+  color: #f6f5f4;
+}
+
+/* Player switcher */
+.encore-switcher-box {
+  spacing: 6px;
+}
+
+.encore-chip {
+  padding: 4px 10px;
+  border-radius: 99px;
+  background-color: rgba(127, 127, 127, 0.15);
+}
+
+.encore-chip:hover {
+  background-color: rgba(127, 127, 127, 0.25);
+}
+
+.encore-chip:checked {
+  background-color: rgba(127, 127, 127, 0.45);
+  font-weight: bold;
+}
+
+.encore-chip-content {
+  spacing: 6px;
+}
+
+/* Artwork */
+.encore-art-button {
+  border-radius: 12px;
+  padding: 0;
+}
+
+.encore-art {
+  border-radius: 12px;
+  background-color: rgba(127, 127, 127, 0.18);
+  background-size: cover;
+}
+
+.encore-art.has-art {
+  background-color: transparent;
+}
+
+.encore-art-placeholder {
+  icon-size: 96px;
+  color: rgba(127, 127, 127, 0.6);
+}
+
+/* Track info */
+.encore-info {
+  spacing: 2px;
+}
+
+.encore-title {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.encore-album {
+  font-size: 0.9em;
+}
+
+.encore-card.tinted .encore-artist {
+  color: rgba(246, 245, 244, 0.85);
+}
+
+.encore-card.tinted .encore-album {
+  color: rgba(246, 245, 244, 0.65);
+}
+
+/* Progress */
+.encore-progress {
+  spacing: 2px;
+}
+
+.encore-time {
+  font-size: 0.85em;
+  font-feature-settings: "tnum";
+}
+
+/* Buttons */
+.encore-controls {
+  spacing: 10px;
+}
+
+.encore-button {
+  padding: 8px;
+  border-radius: 99px;
+}
+
+.encore-button:hover {
+  background-color: rgba(127, 127, 127, 0.2);
+}
+
+.encore-button:active {
+  background-color: rgba(127, 127, 127, 0.32);
+}
+
+.encore-button:focus {
+  box-shadow: inset 0 0 0 2px rgba(127, 127, 127, 0.5);
+}
+
+.encore-button:insensitive {
+  color: rgba(127, 127, 127, 0.5);
+}
+
+.encore-button-icon {
+  icon-size: 18px;
+}
+
+.encore-play {
+  padding: 14px;
+}
+
+.encore-play .encore-button-icon {
+  icon-size: 24px;
+}
+
+.encore-toggle:checked {
+  background-color: rgba(127, 127, 127, 0.18);
+}
+
+/* Volume + lyrics row */
+.encore-bottom,
+.encore-volume {
+  spacing: 8px;
+}
+
+.encore-volume-icon {
+  icon-size: 16px;
+}
+
+/* Lyrics (always on a dark backdrop, so the text is light in both themes) */
+.encore-lyrics {
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+.encore-lyrics-box {
+  padding: 12px;
+  spacing: 2px;
+}
+
+.encore-lyric-line {
+  padding: 4px 6px;
+  border-radius: 8px;
+}
+
+.encore-lyric-line:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.encore-lyric-text,
+.encore-lyrics-plain,
+.encore-lyrics-message {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 1.05em;
+}
+
+.encore-lyrics-plain {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.encore-lyrics-message {
+  text-align: center;
+  padding: 24px 8px;
+}
+
+.encore-lyric-line:current .encore-lyric-text {
+  color: #ffffff;
+  font-weight: bold;
+}
