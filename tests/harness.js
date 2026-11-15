@@ -1,17 +1,9 @@
-// Minimal test harness for plain gjs (no dependencies).
+// Minimal test harness for plain gjs (no dependencies). Tests may be async.
 
-let failures = 0;
-let passes = 0;
+const tests = [];
 
 export function test(name, fn) {
-    try {
-        fn();
-        passes++;
-        print(`  ok   ${name}`);
-    } catch (e) {
-        failures++;
-        print(`  FAIL ${name}\n       ${e.message}`);
-    }
+    tests.push({name, fn});
 }
 
 export function assertEqual(actual, expected, msg = '') {
@@ -26,7 +18,19 @@ export function assert(cond, msg = 'assertion failed') {
         throw new Error(msg);
 }
 
-export function done() {
+/** Run the registered tests in order and exit non-zero on failure. */
+export async function done() {
+    let passes = 0, failures = 0;
+    for (const {name, fn} of tests) {
+        try {
+            await fn();
+            passes++;
+            print(`  ok   ${name}`);
+        } catch (e) {
+            failures++;
+            print(`  FAIL ${name}\n       ${e.message}`);
+        }
+    }
     print(`${passes} passed, ${failures} failed`);
     if (failures > 0)
         imports.system.exit(1);

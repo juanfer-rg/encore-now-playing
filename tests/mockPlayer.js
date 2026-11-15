@@ -1,7 +1,8 @@
 #!/usr/bin/env -S gjs -m
 // A fake MPRIS player for manual testing without a real music app.
 //
-//   gjs -m tests/mockPlayer.js [name] [--art=PATH|URL] [--lyrics] [--desktop=APP_ID]
+//   gjs -m tests/mockPlayer.js [name] [--art=PATH|URL] [--lyrics] [--plain-lyrics]
+//       [--desktop=APP_ID] [--file=file:///path/to/song.flac]
 //
 // It owns org.mpris.MediaPlayer2.<name> (default "EncoreTest"), cycles
 // through three fake tracks, honours Play/Pause/Next/Previous/Seek/
@@ -61,11 +62,14 @@ const IFACE = `
   </interface>
 </node>`;
 
-const LYRICS = `[00:00.50]First line of the fake song
-[00:04.00]Second line, a little longer than the first one
-[00:08.00]Third line
-[00:12.00]Chorus! ♪
-[00:16.00]Last line`;
+// Twenty synced lines, one every four seconds.
+const LYRICS = Array.from({length: 20}, (_, i) => {
+    const t = i * 4 + 0.5;
+    const stamp = `${String(Math.floor(t / 60)).padStart(2, '0')}:${(t % 60).toFixed(2).padStart(5, '0')}`;
+    const words = ['First line of the fake song', 'A longer second line that may need to wrap in the card',
+        'Third line', 'Chorus! ♪', 'Another verse begins'];
+    return `[${stamp}]${words[i % words.length]} (${i + 1})`;
+}).join('\n');
 
 function makeArt(path, rgb) {
     const pixbuf = GdkPixbuf.Pixbuf.new(GdkPixbuf.Colorspace.RGB, false, 8, 256, 256);
@@ -120,8 +124,12 @@ function metadata() {
         m['mpris:artUrl'] = new GLib.Variant('s', t.art);
     if (t.year)
         m['xesam:contentCreated'] = new GLib.Variant('s', t.year);
+    if (flags.file)
+        m['xesam:url'] = new GLib.Variant('s', flags.file);
     if (flags.lyrics)
         m['xesam:asText'] = new GLib.Variant('s', LYRICS);
+    else if (flags['plain-lyrics'])
+        m['xesam:asText'] = new GLib.Variant('s', Array.from({length: 40}, (_, i) => `Plain line ${i + 1}`).join('\n'));
     return m;
 }
 

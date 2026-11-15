@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: encore-now-playing 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-11-15 08:01-0500\n"
+"POT-Creation-Date: 2026-11-15 08:30-0500\n"
 "PO-Revision-Date: 2026-11-15 06:19-0500\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: Spanish\n"
@@ -58,7 +58,7 @@ msgstr ""
 "de partes internas de GNOME y puede dejar de funcionar tras una "
 "actualización."
 
-#: lib/prefs/behaviorPage.js:59 lib/ui/mediaCard.js:205
+#: lib/prefs/behaviorPage.js:59 lib/ui/mediaCard.js:203
 msgid "Lyrics"
 msgstr "Letras"
 
@@ -69,10 +69,12 @@ msgstr "Buscar letras en internet"
 #: lib/prefs/behaviorPage.js:61
 msgid ""
 "Sends the artist, title, album and duration of the current track to "
-"lrclib.net. Lyrics provided by the player are always used first."
+"lrclib.net and lyrics.ovh. Lyrics provided by the player are always used "
+"first."
 msgstr ""
 "Envía el artista, el título, el álbum y la duración de la pista actual a "
-"lrclib.net. Siempre se usan primero las letras que da el reproductor."
+"lrclib.net y lyrics.ovh. Siempre se usan primero las letras que da el "
+"reproductor."
 
 #: lib/prefs/behaviorPage.js:64
 msgid "Album art cache"
@@ -226,115 +228,111 @@ msgid "Content"
 msgstr "Contenido"
 
 #: lib/prefs/panelPage.js:21
-msgid "Audio visualizer"
-msgstr "Visualizador de audio"
-
-#: lib/prefs/panelPage.js:22
-msgid "Moves while something is playing, in any player"
-msgstr "Se mueve mientras algo suena, en cualquier reproductor"
-
-#: lib/prefs/panelPage.js:23
 msgid "Visualizer style"
 msgstr "Estilo del visualizador"
 
+#: lib/prefs/panelPage.js:22
+msgid "Wave"
+msgstr "Onda"
+
+#: lib/prefs/panelPage.js:23
+msgid "Bars"
+msgstr "Barras"
+
 #: lib/prefs/panelPage.js:24
-msgid "Wave (Android)"
-msgstr "Onda (Android)"
+msgid "Signal"
+msgstr "Señal"
 
 #: lib/prefs/panelPage.js:25
-msgid "Spectrum (Winamp classic)"
-msgstr "Espectro (Winamp clásico)"
+msgid ""
+"Moves while something is playing. White, or the artwork’s colors when album "
+"art colors are on."
+msgstr ""
+"Se mueve mientras algo suena. En blanco, o con los colores de la carátula si "
+"están activados."
 
 #: lib/prefs/panelPage.js:26
-msgid "Oscilloscope (Winamp classic)"
-msgstr "Osciloscopio (Winamp clásico)"
-
-#: lib/prefs/panelPage.js:27
-msgid "With album art colors on, it takes the artwork’s color"
-msgstr "Con los colores de la carátula activados, toma el color de la carátula"
-
-#: lib/prefs/panelPage.js:30
 msgid "Icon"
 msgstr "Icono"
 
-#: lib/prefs/panelPage.js:31 lib/prefs/panelPage.js:36
+#: lib/prefs/panelPage.js:27 lib/prefs/panelPage.js:32
 msgid "None"
 msgstr "Ninguno"
 
-#: lib/prefs/panelPage.js:32
+#: lib/prefs/panelPage.js:28
 msgid "Player icon"
 msgstr "Icono del reproductor"
 
-#: lib/prefs/panelPage.js:33
+#: lib/prefs/panelPage.js:29
 msgid "Album art"
 msgstr "Carátula"
 
-#: lib/prefs/panelPage.js:35 lib/prefs/panelPage.js:45
+#: lib/prefs/panelPage.js:31 lib/prefs/panelPage.js:41
 msgid "Text"
 msgstr "Texto"
 
-#: lib/prefs/panelPage.js:37
+#: lib/prefs/panelPage.js:33
 msgid "Title"
 msgstr "Título"
 
-#: lib/prefs/panelPage.js:38
+#: lib/prefs/panelPage.js:34
 msgid "Title · Artist"
 msgstr "Título · Artista"
 
-#: lib/prefs/panelPage.js:39
+#: lib/prefs/panelPage.js:35
 msgid "Artist – Title"
 msgstr "Artista – Título"
 
-#: lib/prefs/panelPage.js:41
+#: lib/prefs/panelPage.js:37
 msgid "Playback buttons"
 msgstr "Botones de reproducción"
 
-#: lib/prefs/panelPage.js:42
+#: lib/prefs/panelPage.js:38
 msgid "Previous, play/pause and next next to the text"
 msgstr "Anterior, reproducir/pausar y siguiente junto al texto"
 
-#: lib/prefs/panelPage.js:46
+#: lib/prefs/panelPage.js:42
 msgid "Maximum width"
 msgstr "Ancho máximo"
 
-#: lib/prefs/panelPage.js:47
+#: lib/prefs/panelPage.js:43
 msgid "In pixels"
 msgstr "En píxeles"
 
-#: lib/prefs/panelPage.js:49
+#: lib/prefs/panelPage.js:45
 msgid "Scroll long text"
 msgstr "Desplazar el texto largo"
 
-#: lib/prefs/panelPage.js:50
+#: lib/prefs/panelPage.js:46
 msgid "Scrolling speed"
 msgstr "Velocidad de desplazamiento"
 
-#: lib/prefs/panelPage.js:51
+#: lib/prefs/panelPage.js:47
 msgid "Pixels per second"
 msgstr "Píxeles por segundo"
 
-#: lib/prefs/panelPage.js:57
+#: lib/prefs/panelPage.js:53
 msgid "Mouse"
 msgstr "Ratón"
 
-#: lib/prefs/panelPage.js:57
+#: lib/prefs/panelPage.js:53
 msgid "Middle-click the indicator to play or pause."
 msgstr ""
 "Haz clic con el botón central en el indicador para reproducir o pausar."
 
-#: lib/prefs/panelPage.js:58
+#: lib/prefs/panelPage.js:54
 msgid "Scroll wheel"
 msgstr "Rueda del ratón"
 
-#: lib/prefs/panelPage.js:59
+#: lib/prefs/panelPage.js:55
 msgid "Nothing"
 msgstr "Nada"
 
-#: lib/prefs/panelPage.js:60
+#: lib/prefs/panelPage.js:56
 msgid "Change volume"
 msgstr "Cambiar el volumen"
 
-#: lib/prefs/panelPage.js:61
+#: lib/prefs/panelPage.js:57
 msgid "Change track"
 msgstr "Cambiar de pista"
 
@@ -365,72 +363,72 @@ msgstr "No hay reproductores abiertos"
 msgid "Start a music player and press refresh"
 msgstr "Abre un reproductor de música y pulsa actualizar"
 
-#: lib/ui/indicator.js:28 lib/ui/indicator.js:248
+#: lib/ui/indicator.js:28 lib/ui/indicator.js:247
 msgid "Now Playing"
 msgstr "Reproduciendo"
 
-#: lib/ui/indicator.js:57 lib/ui/mediaCard.js:197
+#: lib/ui/indicator.js:57 lib/ui/mediaCard.js:195
 msgid "Previous"
 msgstr "Anterior"
 
-#: lib/ui/indicator.js:58 lib/ui/indicator.js:255 lib/ui/mediaCard.js:199
-#: lib/ui/mediaCard.js:403
+#: lib/ui/indicator.js:58 lib/ui/indicator.js:254 lib/ui/mediaCard.js:197
+#: lib/ui/mediaCard.js:407
 msgid "Play"
 msgstr "Reproducir"
 
-#: lib/ui/indicator.js:59 lib/ui/mediaCard.js:201
+#: lib/ui/indicator.js:59 lib/ui/mediaCard.js:199
 msgid "Next"
 msgstr "Siguiente"
 
-#: lib/ui/indicator.js:241 lib/ui/mediaCard.js:385 lib/ui/mediaCard.js:583
+#: lib/ui/indicator.js:240 lib/ui/mediaCard.js:389 lib/ui/mediaCard.js:591
 msgid "Nothing playing"
 msgstr "No suena nada"
 
-#: lib/ui/indicator.js:255 lib/ui/mediaCard.js:403
+#: lib/ui/indicator.js:254 lib/ui/mediaCard.js:407
 msgid "Pause"
 msgstr "Pausar"
 
-#: lib/ui/mediaCard.js:172
+#: lib/ui/mediaCard.js:167
 msgid "Show player window"
 msgstr "Mostrar la ventana del reproductor"
 
-#: lib/ui/mediaCard.js:189
+#: lib/ui/mediaCard.js:187
 msgid "Change layout"
 msgstr "Cambiar el diseño"
 
-#: lib/ui/mediaCard.js:195
+#: lib/ui/mediaCard.js:193
 msgid "Shuffle"
 msgstr "Aleatorio"
 
-#: lib/ui/mediaCard.js:203
+#: lib/ui/mediaCard.js:201
 msgid "Repeat"
 msgstr "Repetir"
 
-#: lib/ui/mediaCard.js:224
+#: lib/ui/mediaCard.js:228
 msgid "Volume"
 msgstr "Volumen"
 
-#: lib/ui/mediaCard.js:592
+#: lib/ui/mediaCard.js:601
 msgid "Looking for lyrics…"
 msgstr "Buscando letras…"
 
-#: lib/ui/mediaCard.js:598
+#: lib/ui/mediaCard.js:607
 msgid "Instrumental"
 msgstr "Instrumental"
 
-#: lib/ui/mediaCard.js:602
+#: lib/ui/mediaCard.js:611
 msgid ""
 "This player does not provide lyrics. You can enable online lookup "
-"(lrclib.net) in the preferences."
+"(lrclib.net, lyrics.ovh) in the preferences."
 msgstr ""
 "Este reproductor no ofrece letras. Puedes activar la búsqueda en internet "
-"(lrclib.net) en las preferencias."
+"(lrclib.net, lyrics.ovh) en las preferencias."
 
-#: lib/ui/mediaCard.js:604
+#: lib/ui/mediaCard.js:613
 msgid "No lyrics found"
 msgstr "No se encontraron letras"
 
-#: lib/ui/progressBar.js:135
+#: lib/ui/progressBar.js:153
 msgid "Track position"
 msgstr "Posición de la pista"
 
@@ -443,78 +441,76 @@ msgid "Position inside the top bar section"
 msgstr "Posición dentro de la sección de la barra superior"
 
 #: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:54
-msgid "Show the audio visualizer in the top bar"
-msgstr "Mostrar el visualizador de audio en la barra superior"
-
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:55
-msgid "It moves while something is playing and settles when playback stops."
-msgstr "Se mueve mientras algo suena y se detiene cuando para la reproducción."
-
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:59
 msgid "Style of the top bar visualizer"
 msgstr "Estilo del visualizador de la barra superior"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:60
-msgid "wave: Android-style line; spectrum and scope: Winamp's classic spectrum analyzer and oscilloscope."
-msgstr "wave: línea estilo Android; spectrum y scope: el analizador de espectro y el osciloscopio clásicos de Winamp."
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:55
+msgid ""
+"wave: flowing line; bars: rounded bars that rise and fall; signal: a "
+"layered, breathing line. The visualizer is always shown and moves while "
+"something is playing."
+msgstr ""
+"wave: línea que fluye; bars: barras redondeadas que suben y bajan; signal: "
+"una línea en capas que respira. El visualizador siempre se muestra y se "
+"mueve mientras algo suena."
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:64
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:59
 msgid "Icon shown in the top bar"
 msgstr "Icono que se muestra en la barra superior"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:68
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:63
 msgid "Text shown in the top bar"
 msgstr "Texto que se muestra en la barra superior"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:72
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:67
 msgid "Show previous/play/next buttons in the top bar"
 msgstr "Mostrar los botones anterior/reproducir/siguiente en la barra superior"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:77
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:72
 msgid "Maximum width of the top bar text, in pixels"
 msgstr "Ancho máximo del texto de la barra superior, en píxeles"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:81
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:76
 msgid "Scroll text that does not fit"
 msgstr "Desplazar el texto que no cabe"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:86
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:81
 msgid "Scrolling speed, in pixels per second"
 msgstr "Velocidad de desplazamiento, en píxeles por segundo"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:90
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:85
 msgid "Hide the indicator when no player is running"
 msgstr "Ocultar el indicador cuando no hay reproductores abiertos"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:94
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:89
 msgid "What scrolling over the indicator does"
 msgstr "Qué hace la rueda del ratón sobre el indicador"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:100
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:95
 msgid "Card layout"
 msgstr "Diseño de la tarjeta"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:101
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:96
 msgid "compact: artwork on the left; large: big artwork on top."
 msgstr "compact: carátula a la izquierda; large: carátula grande arriba."
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:106
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:101
 msgid "Width of the player card, in pixels"
 msgstr "Ancho de la tarjeta del reproductor, en píxeles"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:110
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:105
 msgid "Show the volume slider"
 msgstr "Mostrar el control de volumen"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:114
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:109
 msgid "Show the shuffle and repeat buttons"
 msgstr "Mostrar los botones de aleatorio y repetir"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:118
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:113
 msgid "Show the lyrics button"
 msgstr "Mostrar el botón de letras"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:122
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:117
 msgid ""
 "Color the waves and volume from the album art and add an ambient glow behind "
 "it"
@@ -522,15 +518,15 @@ msgstr ""
 "Colorear las ondas y el volumen con la carátula y añadir un brillo ambiente "
 "detrás"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:126
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:121
 msgid "Accent color used when dynamic colors are off"
 msgstr "Color de acento cuando los colores dinámicos están desactivados"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:132
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:127
 msgid "Players to ignore"
 msgstr "Reproductores que se ignoran"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:133
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:128
 msgid ""
 "Player keys (the MPRIS bus name without the org.mpris.MediaPlayer2. prefix "
 "and instance suffix)."
@@ -538,70 +534,31 @@ msgstr ""
 "Claves de reproductor (el nombre de bus MPRIS sin el prefijo "
 "org.mpris.MediaPlayer2. ni el sufijo de instancia)."
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:137
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:132
 msgid "Hide GNOME's built-in media player in the notification list"
 msgstr ""
 "Ocultar el reproductor integrado de GNOME en la lista de notificaciones"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:141
-msgid "Look up lyrics online (lrclib.net)"
-msgstr "Buscar letras en internet (lrclib.net)"
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:136
+msgid "Look up lyrics online (lrclib.net, lyrics.ovh)"
+msgstr "Buscar letras en internet (lrclib.net, lyrics.ovh)"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:142
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:137
 msgid ""
 "When enabled, the artist, title, album and duration of the current track are "
-"sent to lrclib.net."
+"sent to lrclib.net and lyrics.ovh."
 msgstr ""
 "Si se activa, el artista, el título, el álbum y la duración de la pista "
-"actual se envían a lrclib.net."
+"actual se envían a lrclib.net y lyrics.ovh."
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:146
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:141
 msgid "Clicking the album art brings the player window to the front"
 msgstr "Hacer clic en la carátula trae al frente la ventana del reproductor"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:150
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:145
 msgid "Pause other players when one starts playing"
 msgstr "Pausar otros reproductores cuando uno empieza a sonar"
 
-#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:155
+#: schemas/org.gnome.shell.extensions.encore-now-playing.gschema.xml:150
 msgid "Maximum size of the album art cache, in MB"
 msgstr "Tamaño máximo de la caché de carátulas, en MB"
-
-#~ msgid "Flows while music plays and flattens when paused"
-#~ msgstr "Fluye mientras suena la música y se aplana al pausar"
-
-#~ msgid "A line that flows while music plays and flattens when paused."
-#~ msgstr "Una línea que fluye mientras suena la música y se aplana al pausar."
-
-#~ msgid "Player bar"
-#~ msgstr "Barra de reproductores"
-
-#~ msgid ""
-#~ "Icons of the running players on the left of the card, when there is more "
-#~ "than one"
-#~ msgstr ""
-#~ "Iconos de los reproductores abiertos a la izquierda de la tarjeta, cuando "
-#~ "hay más de uno"
-
-#~ msgid "Show a bar with the players' icons when several are running"
-#~ msgstr ""
-#~ "Mostrar una barra con los iconos de los reproductores cuando hay varios "
-#~ "abiertos"
-
-#~ msgid "Tint the card with colors taken from the album art"
-#~ msgstr "Teñir la tarjeta con colores tomados de la carátula"
-
-#~ msgid "Other players"
-#~ msgstr "Otros reproductores"
-
-#~ msgid "List the other running players under the card"
-#~ msgstr "Lista los demás reproductores abiertos debajo de la tarjeta"
-
-#~ msgid "0 is the first position in the section"
-#~ msgstr "0 es la primera posición de la sección"
-
-#~ msgid "Player switcher"
-#~ msgstr "Selector de reproductor"
-
-#~ msgid "Shown when more than one player is running"
-#~ msgstr "Se muestra cuando hay más de un reproductor abierto"

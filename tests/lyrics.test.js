@@ -1,4 +1,4 @@
-import {findLineIndex, parseLrc} from '../lib/lyrics/lrc.js';
+import {distributePlainLyrics, findLineIndex, parseLrc} from '../lib/lyrics/lrc.js';
 import {cssUrl, formatTime, joinNonEmpty, playerKey} from '../lib/util.js';
 import {assertEqual, done, test} from './harness.js';
 
@@ -38,6 +38,14 @@ test('findLineIndex', () => {
     assertEqual(findLineIndex(lines, 2999), 1);
     assertEqual(findLineIndex(lines, 99999), 2);
     assertEqual(findLineIndex([], 5), -1);
+});
+
+test('plain lyrics are spread over the track, tags dropped', () => {
+    const lines = distributePlainLyrics('[Verse 1]\none\n\ntwo\nthree\n[Chorus]', 40_000);
+    assertEqual(lines.map(l => l.text), ['one', 'two', 'three']);
+    assertEqual(lines.map(l => l.time), [10000, 20000, 30000]);
+    assertEqual(distributePlainLyrics('a', 0)[0].time, 120000);
+    assertEqual(distributePlainLyrics('', 1000), []);
 });
 
 test('playerKey strips prefix and instance suffix', () => {

@@ -1,6 +1,6 @@
 import {
     cardColors, extractPalette, hslToRgb, luminance, paletteFromString,
-    parseHex, rgbToHsl, rgbToHsv, toHex,
+    parseHex, rgbToHsl, rgbToHsv, toHex, waveColors,
 } from '../lib/art/palette.js';
 import {assert, assertEqual, done, test} from './harness.js';
 
@@ -76,6 +76,22 @@ test('card colors: dark background, readable accent', () => {
         assert(luminance(parseHex(c.accent)) > 0.15, `accent ${c.accent} too dark`);
         assert(c.onAccent === '#000000' || c.onAccent === '#ffffff');
     }
+});
+
+test('up to three distinct colors for the waves', () => {
+    const px = image(30, 30, x => (x < 14 ? [220, 30, 40] : x < 24 ? [30, 60, 220] : [40, 200, 60]));
+    const p = extractPalette(px, 30, 30, 30 * 3, 3);
+    assertEqual(p.colors.length, 3);
+    const waves = waveColors(p);
+    assertEqual(waves.length, 3);
+    assert(new Set(waves).size === 3, 'colors should differ');
+    for (const hex of waves)
+        assert(luminance(parseHex(hex)) >= 0.2, `${hex} too dark`);
+});
+
+test('single-color art gives one wave color', () => {
+    const p = extractPalette(image(8, 8, () => [200, 40, 40]), 8, 8, 24, 3);
+    assertEqual(waveColors(p).length, 1);
 });
 
 done();

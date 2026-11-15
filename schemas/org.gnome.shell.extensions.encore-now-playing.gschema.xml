@@ -27,8 +27,8 @@
 
   <enum id="org.gnome.shell.extensions.encore-now-playing.Visualizer">
     <value nick="wave" value="0"/>
-    <value nick="spectrum" value="1"/>
-    <value nick="scope" value="2"/>
+    <value nick="bars" value="1"/>
+    <value nick="signal" value="2"/>
   </enum>
 
   <enum id="org.gnome.shell.extensions.encore-now-playing.CardLayout">
@@ -49,15 +49,10 @@
       <default>0</default>
       <summary>Position inside the top bar section</summary>
     </key>
-    <key name="show-panel-wave" type="b">
-      <default>true</default>
-      <summary>Show the audio visualizer in the top bar</summary>
-      <description>It moves while something is playing and settles when playback stops.</description>
-    </key>
     <key name="panel-visualizer" enum="org.gnome.shell.extensions.encore-now-playing.Visualizer">
       <default>'wave'</default>
       <summary>Style of the top bar visualizer</summary>
-      <description>wave: Android-style line; spectrum and scope: Winamp's classic spectrum analyzer and oscilloscope.</description>
+      <description>wave: flowing line; bars: rounded bars that rise and fall; signal: a layered, breathing line. The visualizer is always shown and moves while something is playing.</description>
     </key>
     <key name="panel-icon" enum="org.gnome.shell.extensions.encore-now-playing.PanelIcon">
       <default>'none'</default>
@@ -138,8 +133,8 @@
     </key>
     <key name="lyrics-online-lookup" type="b">
       <default>false</default>
-      <summary>Look up lyrics online (lrclib.net)</summary>
-      <description>When enabled, the artist, title, album and duration of the current track are sent to lrclib.net.</description>
+      <summary>Look up lyrics online (lrclib.net, lyrics.ovh)</summary>
+      <description>When enabled, the artist, title, album and duration of the current track are sent to lrclib.net and lyrics.ovh.</description>
     </key>
     <key name="click-art-focuses-window" type="b">
       <default>true</default>

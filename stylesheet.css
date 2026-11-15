@@ -20,18 +20,18 @@
   -encore-wave-amplitude: 3.5px;
 }
 
-/* Winamp classic styles (lib/ui/visualizer.js) */
-.encore-wave.spectrum {
+/* Other visualizer styles (lib/ui/visualizer.js) */
+.encore-wave.bars {
   width: 34px;
   height: 16px;
-  -encore-bar-width: 2px;
-  -encore-bar-gap: 1px;
+  -encore-bar-width: 3px;
+  -encore-bar-gap: 2px;
 }
 
-.encore-wave.scope {
+.encore-wave.signal {
   width: 38px;
   height: 16px;
-  -encore-wave-thickness: 1.5px;
+  -encore-wave-thickness: 2px;
 }
 
 .encore-panel-controls {
@@ -121,11 +121,12 @@
   color: rgba(127, 127, 127, 0.6);
 }
 
-.encore-art-badge {
-  margin: 6px;
-  padding: 3px;
-  border-radius: 99px;
-  background-color: rgba(0, 0, 0, 0.55);
+.encore-subtitle-row {
+  spacing: 6px;
+}
+
+.encore-player-icon {
+  icon-size: 14px;
 }
 
 /* Track info */
@@ -214,7 +215,6 @@
 }
 
 .encore-volume-slider {
-  width: 96px;
   -barlevel-height: 3px;
   -slider-handle-radius: 6px;
 }
@@ -229,60 +229,14 @@
   icon-size: 16px;
 }
 
-/* Lyrics, Spotify-style: on a dark backdrop, upcoming lines faint, sung
-   lines dimmed, the current one bright */
+/* Lyrics: drawn by lib/ui/lyricsView.js (text, edge fade and the subtle
+   backdrop follow the popup's colors), so only the size lives here. */
 .encore-lyrics {
   height: 190px;
-  border-radius: 12px;
-  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .encore-lyrics.large {
   height: 220px;
-}
-
-.encore-lyrics-box {
-  padding: 14px 12px;
-  spacing: 4px;
-}
-
-.encore-lyric-line {
-  padding: 4px 6px;
-  border-radius: 8px;
-  transition-duration: 200ms;
-}
-
-.encore-lyric-line:hover {
-  background-color: rgba(255, 255, 255, 0.08);
-}
-
-.encore-lyric-text {
-  font-size: 1.15em;
-  font-weight: bold;
-  color: rgba(255, 255, 255, 0.32);
-}
-
-.encore-lyrics.large .encore-lyric-text {
-  font-size: 1.35em;
-}
-
-.encore-lyric-line:past .encore-lyric-text {
-  color: rgba(255, 255, 255, 0.62);
-}
-
-.encore-lyric-line:current .encore-lyric-text {
-  color: #ffffff;
-}
-
-.encore-lyrics-plain {
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 1.05em;
-}
-
-.encore-lyrics-message {
-  color: rgba(255, 255, 255, 0.55);
-  text-align: center;
-  padding: 24px 8px;
 }
 
 /* Player bar (left of the card, with several players) */
@@ -322,38 +276,14 @@
    the colors pinned above need light counterparts; the class is set on the
    popup box by lib/ui/indicator.js while GNOME uses its light style. */
 
-.encore-light .encore-lyrics {
-  background-color: rgba(0, 0, 0, 0.06);
-}
 
-.encore-light .encore-lyric-line:hover {
-  background-color: rgba(0, 0, 0, 0.06);
-}
 
-.encore-light .encore-lyric-text {
-  color: rgba(0, 0, 0, 0.3);
-}
 
-.encore-light .encore-lyric-line:past .encore-lyric-text {
-  color: rgba(0, 0, 0, 0.55);
-}
 
-.encore-light .encore-lyric-line:current .encore-lyric-text {
-  color: rgba(0, 0, 0, 0.9);
-}
 
-.encore-light .encore-lyrics-plain {
-  color: rgba(0, 0, 0, 0.8);
-}
 
-.encore-light .encore-lyrics-message {
-  color: rgba(0, 0, 0, 0.55);
-}
 
 .encore-light .encore-tab-dot {
   background-color: rgba(0, 0, 0, 0.75);
 }
 
-.encore-light .encore-art-badge {
-  background-color: rgba(255, 255, 255, 0.8);
-}

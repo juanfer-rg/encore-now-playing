@@ -28,12 +28,14 @@ extension.js
  ├─ lib/ui/indicator.js      ← top bar button (PanelMenu.Button) with the audio wave
  │   └─ lib/ui/mediaCard.js  ← the compact card in the popup
  │       ├─ progressBar.js   ← wavy seek bar + position timer
- │       ├─ lyricsView.js    ← synced lyrics, unfolded below the card
+ │       ├─ lyricsView.js    ← lyrics canvas, unfolded below the card
  │       └─ playerSidebar.js ← player icons on the left (several players)
- ├─ lib/ui/wave.js           ← animation driver + the Android-style squiggly line
- ├─ lib/ui/visualizer.js     ← top bar visualizer: wave, Winamp spectrum, Winamp scope
+ ├─ lib/ui/wave.js           ← animation driver + Encore's ribbon (two twisting strands)
+ ├─ lib/ui/visualizer.js     ← top bar visualizer: wave, bars, signal
  ├─ lib/art/artCache.js      ← http artwork → ~/.cache, and color extraction
- ├─ lib/lyrics/lrclib.js     ← lyrics from the player or lrclib.net
+ ├─ lib/lyrics/lrclib.js     ← lyrics: player, local files, lrclib.net, lyrics.ovh
+ │   ├─ local.js             ← "<track>.lrc" beside local files, and tags inside them
+ │   └─ embedded.js          ← MP3 (ID3 USLT/SYLT) and FLAC (Vorbis) lyrics parser
  └─ lib/nativePlayerHider.js ← hides GNOME's built-in player (private API)
 ```
 
@@ -82,32 +84,37 @@ manager.disconnectObject(this);   // in _onDestroy
 When the third argument is an actor (a widget), the handlers are disconnected automatically when it
 is destroyed.
 
-## The audio wave
+## The ribbon
 
-`lib/ui/wave.js` has two parts:
+Encore's wave is a "ribbon": two thin strands in counter-phase that cross at regular points and look
+twisted, scaled by a slow swell that travels along them. When playback stops it settles into one
+straight line. `lib/ui/wave.js` has two parts:
 
-- **`WaveAnimator`** moves the wave. On every frame of a `Clutter.Timeline` it advances the phase and
-  eases the amplitude towards 1 (playing) or 0 (paused). The timeline only runs while the actor is
-  visible and something is moving. When animations are turned off system-wide, the wave is drawn
-  still.
-- **`traceWave()`** adds the sine path to a cairo context. The top bar's `WaveLine` tapers it towards
-  both ends. The seek bar (`WavySlider` in `progressBar.js`) draws it only for the part already played,
-  followed by a straight line and a pill-shaped handle. `WavySlider` subclasses the Shell's `Slider`,
-  so dragging, the keyboard and screen readers keep working.
+- **`WaveAnimator`** moves it. On every frame of a `Clutter.Timeline` it advances the phase and eases
+  the amplitude towards 1 (playing) or 0 (paused). The timeline only runs while the actor is visible
+  and something is moving. When animations are turned off system-wide, it is drawn still.
+- **`drawRibbon()`** draws the two strands (`traceStrand()`): the faint, thinner partner first, then
+  the main one. The top bar visualizer tapers it towards both ends. The seek bar (`WavySlider` in
+  `progressBar.js`) draws it only for the part already played, followed by a thin straight line and
+  a round handle with a soft halo. `WavySlider` subclasses the Shell's `Slider`, so dragging, the
+  keyboard and screen readers keep working.
 
-Sizes and wave shape live in `stylesheet.css` as `-encore-wave-*` lengths, so they can be tuned
-without touching the code.
+Sizes and shape live in `stylesheet.css` as `-encore-wave-*` lengths, so they can be tuned without
+touching the code.
 
 ## The top bar visualizer
 
-`PanelVisualizer` (`lib/ui/visualizer.js`) draws one of three styles with cairo: the wave, Winamp's
-spectrum analyzer (bars that pick new random heights every 90 ms, lower bands louder, with peak caps
-that fall slowly) or Winamp's oscilloscope (a sum of three drifting sines). They are animations, not
+`PanelVisualizer` (`lib/ui/visualizer.js`) is always shown and draws one of three styles with cairo:
+the wave, bars (rounded and mirrored around the middle, each driven by two slow sines of its own so
+they move smoothly, taller in the center) or signal (a main line with two fainter echoes that drift
+and breathe). They are animations, not
 an analysis of the sound: GNOME Shell cannot read the audio without spawning a capture process.
 
 It moves while *any* player plays: `MprisManager` emits `playback-changed` whenever the set of playing
 players, or what they play, changes, and `indicator.js` asks `manager.playing`. With album art colors
-on, `lib/art/accent.js` gives it the accent of the artwork that is playing.
+on, `lib/art/accent.js` gives it up to three colors of the artwork that is playing, blended
+horizontally (`waveColors()` in `palette.js`); otherwise it is white, the panel's text color. The
+seek bar in the card blends the same colors.
 
 ## Colors from the artwork
 
@@ -127,14 +134,34 @@ changing the layout.
 
 ## Light and dark style
 
-Text, buttons and sliders inherit the popup's colors, so they follow GNOME's style on their own. The
-few colors the stylesheet pins (the lyrics backdrop and text, the player dots, the artwork badge) have
-light counterparts under `.encore-light`, a class `indicator.js` sets on the popup box while
+Text, buttons, sliders and the lyrics (drawn with the popup's text color) follow GNOME's style on
+their own. The
+few colors the stylesheet pins (the player dots) have light counterparts under `.encore-light`, a class `indicator.js` sets on the popup box while
 `Main.getStyleVariant()` is `light`, updated live on `notify::color-scheme`.
 
 A separate `stylesheet-light.css` would not work well here: GNOME loads only one stylesheet per
 extension, and St does not rank `@import`ed rules above the Shell theme, so it would have to repeat
 every rule.
+
+## Lyrics
+
+`LyricsProvider` (`lib/lyrics/lrclib.js`) tries, in order:
+
+1. the player's own lyrics (`xesam:asText`)
+2. for local tracks (`xesam:url` is `file://`), `local.js`: a `<name>.lrc` file beside the track, and
+   lyrics embedded in its tags, read by `embedded.js`. That parser only walks the tag area at the
+   start of the file and *skips* big parts such as the cover picture, so it reads a few kilobytes,
+   not the whole file. Synced lyrics win; between two of the same kind, the `.lrc` file wins
+3. only with online lookup on, three requests at once: lrclib.net exact match, lrclib.net search
+   (closest duration within 5 s) and lyrics.ovh (plain text). Synced beats plain, lrclib beats
+   lyrics.ovh
+
+`LyricsView` draws everything on one `St.DrawingArea` with Pango, so there is no scrollbar: the
+current line is centered and bigger, its neighbors a little smaller, the rest faint, and a mask fades
+the top and bottom edges. The scroll position eases towards its target on every frame of a
+`Clutter.Timeline` that only runs while the view is on screen. Unsynced lyrics are spread evenly over
+the track (`distributePlainLyrics()` in `lrc.js`) so they scroll line by line too. Behind the text, a
+very subtle backdrop: a neutral tint, or soft radial glows in the artwork's colors that drift slowly.
 
 ## The two card layouts
 
