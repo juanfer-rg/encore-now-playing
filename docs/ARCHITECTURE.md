@@ -110,7 +110,7 @@ touching the code.
 
 ## The top bar visualizer
 
-`PanelVisualizer` (`lib/ui/visualizer.js`) is always shown and draws one of three styles with cairo:
+`PanelVisualizer` (`lib/ui/visualizer.js`) is always shown and draws one of four styles with cairo:
 the wave, bars (rounded and mirrored around the middle, each driven by sines of its own plus random
 beats), orbit (two dots with fading trails tracing Lissajous figures) or disc (an old acetate: light wedges
 that sweep round with it, a two-tone label, a tonearm that rests on it while playing and swings off
@@ -137,7 +137,8 @@ seek bar in the card blends the same colors.
 2. Grays and near-black pixels are skipped.
 3. Each pixel goes into one of 12 hue buckets, weighted by saturation × brightness.
 4. The heaviest bucket is the main color; the strongest bucket at least 60° of hue away is the accent.
-5. `cardColors()` darkens the background and brightens the accent until both read well.
+5. `cardColors()` brightens the accent until it stands out on the card; the wave colors are
+   brightened the same way.
 
 The accent colors the wave in the top bar, the seek bar, the volume slider, the active toggles and
 the dots in the player bar. The card background is never tinted. With "Colors from album art" on,

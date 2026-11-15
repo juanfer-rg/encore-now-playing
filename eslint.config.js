@@ -26,10 +26,17 @@ export default [
         },
         rules: {
             'no-unused-vars': ['error', {argsIgnorePattern: '^_', varsIgnorePattern: '^_'}],
-            'prefer-const': 'error',
+            'prefer-const': ['error', {destructuring: 'all'}],
             'eqeqeq': ['error', 'smart'],
             'no-var': 'error',
-            'indent': ['error', 4, {SwitchCase: 0}],
+            // GNOME Shell style: the class passed to registerClass() starts
+            // at column 0, as in gnome-shell's own lint rules.
+            'indent': ['error', 4, {
+                SwitchCase: 0,
+                ignoredNodes: [
+                    'CallExpression[callee.object.name=GObject][callee.property.name=registerClass] > ClassExpression:first-child',
+                ],
+            }],
             'quotes': ['error', 'single', {avoidEscape: true}],
             'semi': ['error', 'always'],
             'comma-dangle': ['error', 'always-multiline'],

@@ -69,12 +69,10 @@ test('string palette is stable', () => {
     assert(JSON.stringify(paletteFromString('a')) !== JSON.stringify(paletteFromString('b')));
 });
 
-test('card colors: dark background, readable accent', () => {
-    for (const primary of [[250, 250, 30], [10, 10, 80], [200, 20, 20]]) {
-        const c = cardColors({primary, secondary: primary, colorful: true});
-        assert(luminance(parseHex(c.background)) < 0.05, `background ${c.background} too light`);
+test('card accent is readable', () => {
+    for (const color of [[250, 250, 30], [10, 10, 80], [200, 20, 20]]) {
+        const c = cardColors({primary: color, secondary: color, colorful: true});
         assert(luminance(parseHex(c.accent)) > 0.15, `accent ${c.accent} too dark`);
-        assert(c.onAccent === '#000000' || c.onAccent === '#ffffff');
     }
 });
 

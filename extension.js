@@ -13,8 +13,7 @@ export default class EncoreExtension extends Extension {
         this._settings = this.getSettings();
         const userAgent = `Encore-Now-Playing/${this.metadata['version-name'] ?? 'dev'} (${this.metadata.url})`;
 
-        this._artCache = new ArtCache(this._settings);
-        this._artCache.setUserAgent(userAgent);
+        this._artCache = new ArtCache(this._settings, userAgent);
         this._lyrics = new LyricsProvider(this._settings, userAgent);
         this._manager = new MprisManager(this._settings);
         this._nativeHider = new NativePlayerHider();
@@ -53,9 +52,8 @@ export default class EncoreExtension extends Extension {
         this._settings = null;
     }
 
-    // The indicator is rebuilt when its section changes: moving it to
-    // another section would need the panel's private boxes. The order inside
-    // the section is kept by PanelPlacement.
+    // Rebuilt when its section changes: moving it to another section would
+    // need the panel's private boxes.
     _createIndicator() {
         this._placement?.destroy();
         this._placement = null;
