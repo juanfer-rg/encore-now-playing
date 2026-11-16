@@ -2,7 +2,7 @@
   "uuid": "encore-now-playing@juanfer-rg.github.io",
   "name": "Encore - Now Playing",
   "description": "A music player card for GNOME Shell.\n\nShows the current track in the top bar and a card with album art, progress, playback controls, volume, shuffle/repeat, synced lyrics and colors taken from the artwork. Works with any MPRIS-compatible player.",
-  "shell-version": ["48", "49", "50"],
+  "shell-version": ["46", "47", "48", "49", "50"],
   "url": "https://github.com/juanfer-rg/encore-now-playing",
   "settings-schema": "org.gnome.shell.extensions.encore-now-playing",
   "gettext-domain": "encore-now-playing",

@@ -66,7 +66,7 @@ gnome-extensions prefs encore-now-playing@juanfer-rg.github.io
 
 ### Requirements
 
-- GNOME Shell 48, 49 or 50
+- GNOME Shell 46, 47, 48, 49 or 50 (Ubuntu 24.04 LTS ships GNOME 46)
 - `glib-compile-schemas` and `msgfmt` (gettext) to build from source
 
 ## Features
